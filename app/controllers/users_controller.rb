@@ -6,7 +6,10 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(email: params[:user][:email], password: params[:user][:password])
-        binding.pry
+        if @user.errors.any?
+            redirect_to new_user_path
+        end
+        # redirect_to user_show_path
     end
 
 end
