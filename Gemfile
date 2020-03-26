@@ -8,6 +8,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem "pg"
 gem "bcrypt"
 gem "pry"
+gem "flash"
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
