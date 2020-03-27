@@ -27,7 +27,7 @@
       min-height: 100vh;
   }
 
-  #hamburger {
+  #overlay-hamburger {
       height: 100px;
       width: 100px;
       margin-top: 35%;
@@ -251,4 +251,111 @@
     to {opacity: 1}
   }
 
+  .overlay {
+      display: none;
+  }
+  .overlay img {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: auto;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+.overlay ul {
+    list-style-type: none;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+}
+.overlay li {
+    padding: 20px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    opacity: 0;
+    font-family: 'Lalezar', cursive;
+}
 
+#close-menu {
+    opacity: 0;
+    animation: show-x 1s 1s forwards;
+}
+.show-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    background-color: black;
+    margin-right: 50%;
+    width: 50%;
+    min-height: 100vh;
+    z-index: 10;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: slide-menu 1s ease-in forwards;
+}
+.show-menu-hiding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    background-color: black;
+    margin-right: 50%;
+    width: 50%;
+    min-height: 100vh;
+    z-index: 10;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: slide-menu-hide 1s ease-in forwards;
+    opacity: 0;
+}
+.overlay li:nth-of-type(1) {
+    animation: menu-item-anim 1s 1.2s ease-in-out forwards;
+}
+.overlay li:nth-of-type(2) {
+    animation: menu-item-anim 1s 1.5s ease-in-out forwards;
+}
+.overlay li:nth-of-type(3) {
+    animation: menu-item-anim 1s 1.8s ease-in-out forwards;
+}
+.overlay li:nth-of-type(4) {
+    animation: menu-item-anim 1s 2.1s ease-in-out forwards;
+}
+
+@keyframes slide-menu {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes show-x {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes menu-item-anim {
+    from {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+@keyframes slide-menu-hide {
+    from {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}

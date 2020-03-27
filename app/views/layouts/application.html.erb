@@ -10,11 +10,21 @@
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap"%>
   </head>
 
+<div class="overlay">
+        <img src="images/cross-icon.svg" id="close-menu">
+        <ul>
+            <li id="home"><a href="#welcome-section">Home</a></li>
+            <li id="about"><a href="#about-section">About</a></li>
+            <li id="projects"><a href="#projects-section">Projects</a></li>
+            <li id="contact"><a href="#contact-section">Contact</a></li>
+        </ul>
+  </div>
+
   <header>
     <nav>
       <ul id="nav-bar">
         <li>
-            <%= image_tag("logos/hamburger", id: "hamburger")%>
+            <%= image_tag("logos/hamburger", id: "overlay-hamburger")%>
         </li>
         <li id="logo-container">
           <div>
@@ -35,5 +45,42 @@
       </ul>
     </footer>
   </body>
+
+  <script>
+    /* Mobile screen menu function*/
+
+      let openMenu = document.getElementById("overlay-hamburger");
+      let closeMenu = document.getElementById("close-menu");
+
+      const showMenu = () => {
+          let overlay = document.querySelector(".overlay");
+          overlay.classList.add("show-menu");
+      }
+      openMenu.onclick = showMenu;
+
+      const hideMenu = () => {
+          let overlay = document.querySelector(".overlay");
+          overlay.classList.add("show-menu-hiding");
+          overlay.classList.remove("show-menu");
+          const removeClass = () => {
+              setTimeout(function() {overlay.classList.remove("show-menu-hiding"); }, 1200);
+          }
+          removeClass();
+          
+
+      }
+      let listHome = document.getElementById("home");
+      let listAbout = document.getElementById("about");
+      let listProjects = document.getElementById("projects");
+      let listContact = document.getElementById("contact");
+
+      listHome.onclick = hideMenu;
+      listAbout.onclick = hideMenu;
+      listProjects.onclick = hideMenu;
+      listContact.onclick = hideMenu;
+
+
+      closeMenu.onclick = hideMenu;
+  </script>
  
 </html>
