@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/login" => "sessions#new"
   post "/sessions" => "sessions#create"
+  root 'home#index'
 
 
   resources :users, only: [:new, :create]
