@@ -27,90 +27,13 @@
   </header>
 
   <body>
-    <section id="main">
-      <%= image_tag("logos/triangles", id: "triangle1")%>
-      <div id="main-title">
-        <p class="title-1">LEAVE THE WORLD</p>
-        <p class="title-1">BEHIND</p>
-      </div>
-      <%= image_tag("logos/triangles", id: "triangle2")%>
-    </section>
-    
-    <section id="shop-now-container">
-      <%= link_to "Shop Now", products_path, id: "shop-now"%>
-    </section>
-
-    <section id="shoes-container">
-              <!-- Slideshow container -->
-        <div class="slideshow-container">
-
-          <!-- Full-width images with number and caption text -->
-          <div class="mySlides fade">
-            <%= image_tag("logos/shoe_main", style: "width: 100%;")%>
-            <div class="text">ALPHA</div>
-            <div class="text2">KICKER 5 MID</div>
-            <div class="text3">$250</div>
-          </div>
-
-          <div class="mySlides fade">
-            <%= image_tag("logos/shoe_secondary", style: "width: 100%;")%>
-            <div class="text">ALPHA</div>
-            <div class="text2">KICKER 5 LOW</div>
-            <div class="text3">$200</div>
-          </div>
-
-          <div class="mySlides fade">
-            <%= image_tag("logos/shoe_third", style: "width: 100%;")%>
-            <div class="text">ALPHA</div>
-            <div class="text2">KICKER 5 RUN</div>
-            <div class="text3">$150</div>
-          </div>
-
-          <!-- Next and previous buttons -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-      </section>
-
-
     <%= yield %>
+    <footer>
+      <ul id="footer">
+        <li id="footer-left">ALL RIGHTS RESERVED</li>
+        <li id="footer-right">ALPHA SHOES 2020</li>
+      </ul>
+    </footer>
   </body>
-  <script>
-    var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-  </script>
+ 
 </html>

@@ -19,9 +19,12 @@
     padding: 0;
   }
 
+
+
   html {
       background-color: #0E494D;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
   }
 
   #hamburger {
@@ -103,6 +106,41 @@
   #shoes-container {
       margin-top: 35%;
 
+  }
+
+  footer {
+      position: relative;
+      background-color: #E1AF5A;
+      height: 6em;
+      bottom: 0;
+      width: 100%;
+      clear: both;
+      margin-top: 9em;
+  }
+
+  #footer {
+      display: flex;
+      list-style: none;
+  }
+
+  #footer li {
+    margin-top: 3%;
+  }
+
+  #footer-right {
+      align-self: flex-end;
+      margin-left: auto;
+      color: black;
+      font-size: 2em;
+      font-weight: 900;
+      margin-right: 2%;
+  }
+
+  #footer-left {
+      color: black;
+      font-size: 2em;
+      font-weight: 900;
+      margin-left: 2%;
   }
 
   * {box-sizing:border-box}
