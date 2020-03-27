@@ -11,12 +11,12 @@
   </head>
 
 <div class="overlay">
-        <img src="images/cross-icon.svg" id="close-menu">
+        <%= image_tag("logos/cross-icon", id: "close-menu")%>
         <ul>
-            <li id="home"><a href="#welcome-section">Home</a></li>
-            <li id="about"><a href="#about-section">About</a></li>
-            <li id="projects"><a href="#projects-section">Projects</a></li>
-            <li id="contact"><a href="#contact-section">Contact</a></li>
+            <li id="home"><a href="/">HOME</a></li>
+            <li id="about"><a href="/">ORDERS</a></li>
+            <li id="projects"><a href="/">PRODUCTS</a></li>
+            <li id="contact"><a href="/">LOGOUT</a></li>
         </ul>
   </div>
 
@@ -49,8 +49,8 @@
   <script>
     /* Mobile screen menu function*/
 
-      let openMenu = document.getElementById("overlay-hamburger");
-      let closeMenu = document.getElementById("close-menu");
+      const openMenu = document.getElementById("overlay-hamburger");
+      const closeMenu = document.getElementById("close-menu");
 
       const showMenu = () => {
           let overlay = document.querySelector(".overlay");

@@ -18,6 +18,10 @@
     margin: 0;
     padding: 0;
   }
+  a{
+      text-decoration: none;
+      color: white;
+  }
 
 
 
@@ -269,14 +273,18 @@
     margin: auto;
 }
 .overlay li {
-    padding: 20px;
-    font-size: 1.6rem;
+    padding: 1em;
+    font-size: 3em;
     cursor: pointer;
+    color: white;
     opacity: 0;
-    font-family: 'Lalezar', cursive;
 }
 
 #close-menu {
+    height: 4em;
+    width: 4em;
+    margin-top: 10%;
+    margin-right: 10%;
     opacity: 0;
     animation: show-x 1s 1s forwards;
 }
