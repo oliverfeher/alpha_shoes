@@ -10,8 +10,10 @@ class UsersController < ApplicationController
             # redirect_to new_user_path
             flash[:user_errors] = @user.errors.full_messages
             redirect_to action: "new"
+        else
+            session[:user_id] = @user.id   #Upon successful sign-up user is logged in automatically!
+             # redirect_to user_show_path
         end
-        # redirect_to user_show_path
     end
 
 end
