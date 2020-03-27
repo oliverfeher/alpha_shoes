@@ -12,7 +12,7 @@ class UsersController < ApplicationController
             redirect_to action: "new"
         else
             session[:user_id] = @user.id   #Upon successful sign-up user is logged in automatically!
-             # redirect_to user_show_path
+             redirect_to root_path
         end
     end
 

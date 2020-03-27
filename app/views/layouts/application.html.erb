@@ -7,7 +7,24 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap"%>
   </head>
+
+  <header>
+    <nav>
+      <ul id="nav-bar">
+        <li>
+            <%= image_tag("logos/hamburger", id: "hamburger")%>
+        </li>
+        <li id="logo-container">
+          <div>
+            <p id="logo-title">ALPHA</p>
+            <p id="logo-desc">SHOES</p>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
   <body>
     <%= yield %>

@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+      background-color: #0E494D;
+  }
+
+  #hamburger {
+      height: 100px;
+      width: 100px;
+      margin-top: 35%;
+      margin-left: 50%;
+  }
+
+  #logo-title {
+      font-size: 4em;
+      font-family: 'Rubik Mono One', sans-serif;
+      color: white;
+  }
+
+  #logo-desc {
+      color: white;
+      font-size: 3em;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-top: -10%;
+  }
+
+  #logo-container {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nav-bar {
+    display: flex;
+    list-style: none;
+  }
+
+
+
+
