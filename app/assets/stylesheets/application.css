@@ -42,7 +42,11 @@
     height: 100px;
     width: 100px;
   }
-  
+
+  #shoppingcart:hover {
+      cursor: pointer;
+  }
+
   #user-logo {
       height: 100px;
       width: 100px;

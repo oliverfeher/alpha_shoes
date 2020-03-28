@@ -21,7 +21,9 @@
         <p id="error-msg"><%= msg %></p>
     <% end %>
 
-    <%= link_to "REGISTER", new_user_path, id: "cta"%>
+    <% if !logged_in? %>
+        <%= link_to "REGISTER", new_user_path, id: "cta"%>
+    <% end %>
 
 <% end %>
 
