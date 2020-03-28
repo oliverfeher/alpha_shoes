@@ -113,7 +113,7 @@
   }
 
   footer {
-      position: relative;
+      position: absolute;
       background-color: #E1AF5A;
       height: 6em;
       bottom: 0;

@@ -6,7 +6,6 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap"%>
   </head>
 
@@ -52,13 +51,13 @@
       const openMenu = document.getElementById("overlay-hamburger");
       const closeMenu = document.getElementById("close-menu");
 
-      const showMenu = () => {
+      function showMenu() {
           let overlay = document.querySelector(".overlay");
           overlay.classList.add("show-menu");
       }
       openMenu.onclick = showMenu;
 
-      const hideMenu = () => {
+      function hideMenu() {
           let overlay = document.querySelector(".overlay");
           overlay.classList.add("show-menu-hiding");
           overlay.classList.remove("show-menu");

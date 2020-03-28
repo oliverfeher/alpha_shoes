@@ -1,10 +1,12 @@
+<%= stylesheet_link_tag 'application' %>
+
 <%= form_with(url: "/sessions", method: "POST") do |f| %>
 
-    <%= f.label :email, "User E-mail" %><br>
-    <%= f.email_field :email, placeholder: "Enter your e-mail" %><br>
+    <%= f.label :email, "User E-mail" %>
+    <%= f.email_field :email, placeholder: "Enter your e-mail" %>
 
-    <%= f.label :password, "Password" %><br>
-    <%= f.password_field :password, placeholder: "Enter your password" %><br>
+    <%= f.label :password, "Password" %>
+    <%= f.password_field :password, placeholder: "Enter your password" %>
 
     <%= f.submit "Log In"%>
 
@@ -14,5 +16,7 @@
 <% flash.each do |name, msg| %>
     <p><%= msg %></p>
 <% end %>
+
+
 
 
