@@ -15,7 +15,11 @@
             <li id="home"><a href="/">HOME</a></li>
             <li id="about"><a href="/">ORDERS</a></li>
             <li id="projects"><a href="/">PRODUCTS</a></li>
-            <li id="contact"><a href="/">LOGOUT</a></li>
+            <% if logged_in? %>
+              <li id="contact"><a href="/users/logout">LOG OUT</a></li>
+            <% else %>
+              <li id="contact"><a href="/users/login">LOG IN</a></li>
+            <% end %>
         </ul>
   </div>
 
@@ -25,12 +29,24 @@
         <li>
             <%= image_tag("logos/hamburger", id: "overlay-hamburger")%>
         </li>
+        <% if logged_in? %>
+          <li id="logo-container">
+            <div>
+              <%= image_tag("logos/shopping-cart", id: "shoppingcart")%>
+            </div>
+            <div>
+              <%= image_tag("logos/user", id: "user-logo")%>
+              <p id="user-name"><%= current_user.email %></p>
+            </div>
+          </li>
+        <% else %>
         <li id="logo-container">
           <div>
             <p id="logo-title">ALPHA</p>
             <p id="logo-desc">SHOES</p>
           </div>
         </li>
+        <% end %>
       </ul>
     </nav>
   </header>
@@ -80,6 +96,16 @@
 
 
       closeMenu.onclick = hideMenu;
+
+  
+      function toUserPage() {
+        window.location.href = "/users/login"
+      }
+
+      let userLogo = document.getElementById("user-logo");
+      userLogo.onclick = toUserPage
+      
+
   </script>
  
 </html>

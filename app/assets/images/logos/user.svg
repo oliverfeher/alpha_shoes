@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44.765" height="44.765" viewBox="0 0 44.765 44.765">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-1.505" y1="2.51" x2="-1.476" y2="2.459" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-opacity="0.102"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="user" transform="translate(0.5 0.5)">
+    <path id="Path_297" data-name="Path 297" d="M21.882,0A21.882,21.882,0,1,0,43.765,21.882,21.907,21.907,0,0,0,21.882,0Z" fill="#303c42"/>
+    <path id="Path_298" data-name="Path 298" d="M41.392,21.333a20.022,20.022,0,0,1,16.2,31.836,7.258,7.258,0,0,0-.631-.371,35.075,35.075,0,0,0-15.571-4.112A35.069,35.069,0,0,0,25.82,52.8a7.24,7.24,0,0,0-.63.37,20.022,20.022,0,0,1,16.2-31.836Z" transform="translate(-19.509 -19.509)" fill="#e6e6e6"/>
+    <path id="Path_299" data-name="Path 299" d="M94.957,373.608A20,20,0,0,1,79.9,366.764c.1-.064.211-.133.314-.186a33.248,33.248,0,0,1,14.738-3.911,33.252,33.252,0,0,1,14.737,3.91c.1.054.21.123.315.187A20,20,0,0,1,94.957,373.608Z" transform="translate(-73.075 -331.667)" fill="#1e88e5"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="11" cy="11" r="11" transform="translate(11.176 5)" fill="#303c42"/>
+    <path id="Path_300" data-name="Path 300" d="M255.335,371.807a20.237,20.237,0,0,0,6.784-5.043c-.105-.064-.211-.133-.315-.187a33.252,33.252,0,0,0-14.737-3.91c-.282,0-.556.027-.835.036Z" transform="translate(-225.185 -331.667)" fill="url(#linear-gradient)"/>
+    <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="9" cy="9.5" rx="9" ry="9.5" transform="translate(13.176 7)" fill="#1e88e5"/>
+    <path id="Path_301" data-name="Path 301" d="M169.572,102.263a9.017,9.017,0,0,1,.583,3.112,9.086,9.086,0,0,1-14.006,7.671,9.1,9.1,0,1,0,13.423-10.782Z" transform="translate(-142.802 -93.522)" opacity="0.1"/>
+    <path id="Path_302" data-name="Path 302" d="M21.882,0A21.872,21.872,0,0,0,6.417,37.348a21.664,21.664,0,0,0,15.466,6.417A21.882,21.882,0,0,0,21.882,0Z" fill="none" stroke="#e1af5a" stroke-width="1"/>
+  </g>
+</svg>

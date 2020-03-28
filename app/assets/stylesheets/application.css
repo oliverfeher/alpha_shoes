@@ -38,6 +38,25 @@
       margin-left: 50%;
   }
 
+  #shoppingcart {
+    height: 100px;
+    width: 100px;
+  }
+  
+  #user-logo {
+      height: 100px;
+      width: 100px;
+    }  
+    #user-logo:hover {
+        cursor: pointer;
+    }
+
+    #user-name {
+        color: white;
+        font-size: 2em;
+    }
+    
+    
   #logo-title {
       font-size: 4em;
       font-family: 'Rubik Mono One', sans-serif;
@@ -56,6 +75,7 @@
     margin-right: 5%;
     margin-top: 3%;
     text-align: center;
+    display: flex;
   }
 
   nav {

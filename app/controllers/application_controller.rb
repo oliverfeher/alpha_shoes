@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+    #Allows to use current_user method in the actionviews
+    helper_method :current_user, :logged_in?
     
     
     # Using it for before_action: auth_req... user only able to see the page if user is logged_in
@@ -18,7 +20,5 @@ class ApplicationController < ActionController::Base
     end
     
     
-    #Allows to use current_user method in the actionviews
-    helper_method :current_user
 
 end
