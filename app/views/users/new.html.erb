@@ -1,3 +1,12 @@
+<%= stylesheet_link_tag 'application' %>
+<section id="main">
+    <%= image_tag("logos/triangles", id: "triangle1")%>
+    <div id="main-title">
+    <p class="title-21">ALPHA</p>
+    <p class="title-1">SHOES</p>
+    </div>
+    <%= image_tag("logos/triangles", id: "triangle2")%>
+</section>
 
 <%= form_with(model: @user, url: users_path, method: "POST") do |f| %>
 
@@ -7,13 +16,14 @@
     <%= f.label :password, "Password" %><br>
     <%= f.password_field :password, placeholder: "Enter your password" %><br>
 
-    <%= f.submit "Sign up"%>
+    <%= f.submit "SIGN UP", id: "button"%>
+
+  <% if flash[:user_errors] %>
+      <% flash[:user_errors].uniq.each do |msg| %>
+       <p id="error-msg"><%= msg %></p>
+      <% end %>
+  <% end %>
 
 <% end %>
 
-<% if flash[:user_errors] %>
-    <% flash[:user_errors].uniq.each do |msg| %>
-      <p><%= msg %></p>
-    <% end %>
-<% end %>
 

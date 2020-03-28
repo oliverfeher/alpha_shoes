@@ -43,3 +43,11 @@ input {
     text-align: center;
     font-size: 2.5em;
 }
+
+#cta {
+    text-align: center;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 2.3em;
+    color: white;
+    text-decoration: underline;
+}
