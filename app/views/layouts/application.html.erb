@@ -36,7 +36,7 @@
             </div>
             <div>
               <%= image_tag("logos/user", id: "user-logo")%>
-              <p id="user-name"><%= current_user.email %></p>
+              <p id="user-name"><%= current_user.detail.full_name %></p>
             </div>
           </li>
         <% else %>

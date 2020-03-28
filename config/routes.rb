@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   get "/users/login" => "sessions#new"
   get "/users/logout" => "sessions#destroy"
   post "/sessions" => "sessions#create"
+  post "/users/details" => "details#create"
   root 'home#index'
 
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create] do
+    resource :details, only: [:new, :show,]
+  end
   resources :products, only: [:index, :show]
 end

@@ -1,0 +1,27 @@
+<section id="main">
+    <%= image_tag("logos/triangles", id: "triangle1")%>
+    <div id="main-title">
+    <p class="title-21">USER</p>
+    <p class="title-1">DETAILS</p>
+    </div>
+</section>
+<%= form_with(url: "/users/details", method: "POST") do |f| %>
+
+    <%= f.label :full_name, "Full name" %>
+    <%= f.text_field :full_name, placeholder: "Enter your full name" %>
+
+    <%= f.label :address, "Address" %>
+    <%= f.text_field :address, placeholder: "Enter your address" %>
+
+    <%= f.label :city, "City" %>
+    <%= f.text_field :city, placeholder: "Enter your city" %>
+
+    <%= f.label :state, "State" %>
+    <%= f.text_field :state, placeholder: "Enter your state" %>
+
+    <%= f.submit "CONFIRM", id: "button"%>
+
+    <% flash.each do |name, msg| %>
+        <p id="error-msg"><%= msg %></p>
+    <% end %>
+<% end %>
