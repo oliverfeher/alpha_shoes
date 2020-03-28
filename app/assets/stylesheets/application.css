@@ -133,17 +133,17 @@
 
   #shoes-container {
       margin-top: 35%;
-
+      margin-bottom: 20%;
   }
 
   footer {
-      position: absolute;
+      position: fixed;
       background-color: #E1AF5A;
       height: 6em;
       bottom: 0;
       width: 100%;
       clear: both;
-      margin-top: 9em;
+      margin-top: 10em;
   }
 
   #footer {

@@ -4,7 +4,7 @@ form {
     flex-direction: column;
     width: 70%;
     align-content: center;
-    margin: 15% auto;
+    margin: 15% auto 15%;
 }
 
 label {
@@ -50,5 +50,6 @@ input {
     font-size: 2.3em;
     color: white;
     text-decoration: underline;
+    margin-bottom: 20%;
 }
 
