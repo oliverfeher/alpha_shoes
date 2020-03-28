@@ -1,5 +1,12 @@
 <%= stylesheet_link_tag 'application' %>
-
+<section id="main">
+    <%= image_tag("logos/triangles", id: "triangle1")%>
+    <div id="main-title">
+    <p class="title-21">ALPHA</p>
+    <p class="title-1">SHOES</p>
+    </div>
+    <%= image_tag("logos/triangles", id: "triangle2")%>
+</section>
 <%= form_with(url: "/sessions", method: "POST") do |f| %>
 
     <%= f.label :email, "User E-mail" %>
@@ -8,14 +15,15 @@
     <%= f.label :password, "Password" %>
     <%= f.password_field :password, placeholder: "Enter your password" %>
 
-    <%= f.submit "Log In"%>
+    <%= f.submit "LOG IN", id: "button"%>
+
+    <% flash.each do |name, msg| %>
+        <p id="error-msg"><%= msg %></p>
+    <% end %>
 
 <% end %>
 
 
-<% flash.each do |name, msg| %>
-    <p><%= msg %></p>
-<% end %>
 
 
 
