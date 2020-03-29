@@ -13,7 +13,7 @@
                 <%= image_tag(shoe.pic_url, class: "container-img")%>
                 <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
                 <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
-                <%= content_tag(:p, shoe.price, class: "price-tag") %>
+                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
             </div>
         <% end %>
     </section>
