@@ -1,0 +1,20 @@
+ <section id="main">
+      <%= image_tag("logos/triangles", id: "triangle1")%>
+      <div id="main-title">
+        <p class="title-1">LEAVE THE WORLD</p>
+        <p class="title-1">BEHIND</p>
+      </div>
+      <%= image_tag("logos/triangles", id: "triangle2")%>
+    </section>
+
+    <section id="shoes-container">
+        <div class="shoe-container">
+            <%= image_tag(@shoes.first.pic_url, class: "container-img")%>
+            <%= content_tag(:p, @shoes.first.brand, class: "brand-tag") %>
+            <%= content_tag(:p, @shoes.first.model, class: "brand-tag") %>
+            <%= content_tag(:p, @shoes.first.price, class: "brand-tag") %>
+        </div>
+
+        <div class="shoe-container">
+        </div>
+    </section>

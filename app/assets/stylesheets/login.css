@@ -53,3 +53,22 @@ input {
     margin-bottom: 20%;
 }
 
+#shoes-container {
+    width: 80%;
+    margin: auto;
+}
+
+.shoe-container {
+    background-color: white;
+    border: 10px black solid;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+
+.container-img {
+    height: 60%;
+    width: 60%;
+    align-self: center;
+}

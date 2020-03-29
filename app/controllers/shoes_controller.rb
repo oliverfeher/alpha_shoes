@@ -1,5 +1,6 @@
 class ShoesController < ApplicationController
     def index
+        @shoes = Shoe.all
         if logged_in?
             render "index"
         else
