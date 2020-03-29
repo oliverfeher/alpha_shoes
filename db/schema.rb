@@ -25,9 +25,8 @@ ActiveRecord::Schema.define(version: 2020_03_29_003823) do
 
   create_table "shoes", force: :cascade do |t|
     t.string "brand"
-    t.string "type"
+    t.string "model"
     t.integer "price"
-    t.string "review_id"
     t.string "detail1"
     t.string "detail2"
     t.string "detail3"

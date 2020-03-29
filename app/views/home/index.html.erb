@@ -17,24 +17,24 @@
 
           <!-- Full-width images with number and caption text -->
           <div class="mySlides fade">
-            <%= image_tag("logos/shoe_main", style: "width: 90%;")%>
-            <div class="text">ALPHA</div>
-            <div class="text2">KICKER 5 MID</div>
-            <div class="text3">$250</div>
+            <%= image_tag(@shoe1.pic_url, style: "width: 90%;")%>
+            <div class="text"><%= @shoe1.brand%></div>
+            <div class="text2"><%= @shoe1.model.upcase%></div>
+            <div class="text3">$<%= @shoe1.price%></div>
           </div>
 
           <div class="mySlides fade">
-            <%= image_tag("logos/shoe_secondary", style: "width: 100%;")%>
-            <div class="text">ALPHA</div>
-            <div class="text2">KICKER 5 LOW</div>
-            <div class="text3">$200</div>
+            <%= image_tag(@shoe2.pic_url, style: "width: 100%;")%>
+            <div class="text"><%= @shoe2.brand%></div>
+            <div class="text2"><%= @shoe2.model.upcase%></div>
+            <div class="text3">$<%= @shoe3.price%></div>
           </div>
 
           <div class="mySlides fade">
-            <%= image_tag("logos/shoe_third", style: "width: 100%;")%>
-            <div class="text">ALPHA</div>
-            <div class="text2">KICKER 5 RUN</div>
-            <div class="text3">$150</div>
+            <%= image_tag(@shoe3.pic_url, style: "width: 100%;")%>
+            <div class="text"><%= @shoe3.brand%></div>
+            <div class="text2"><%= @shoe3.model.upcase%></div>
+            <div class="text3">$<%= @shoe3.price%></div>
           </div>
 
           <!-- Next and previous buttons -->
