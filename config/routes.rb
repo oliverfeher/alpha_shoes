@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:new, :create] do
+    resource :cart, only: [:show]
     resource :details, only: [:new, :show,]
   end
   resources :shoes, only: [:index, :show]

@@ -106,6 +106,13 @@
 
       let userLogo = document.getElementById("user-logo");
       userLogo.onclick = toUserPage
+
+      function toCart() {
+        window.location.href = "/users/<%= current_user.id%>/cart"
+      }
+
+      let shoppingCart = document.getElementById("shoppingcart");
+      shoppingCart.onclick = toCart
       
 
   </script>
