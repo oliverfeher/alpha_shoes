@@ -7,13 +7,20 @@
       <%= image_tag("logos/triangles", id: "triangle2")%>
     </section>
 
-    <section id="shoes-container">
+    <section id="shoes-list-container">
         <% @shoes.each do |shoe| %>
             <div class="shoe-container">
                 <%= image_tag(shoe.pic_url, class: "container-img")%>
                 <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
                 <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
                 <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
+
+                <%= form_with(model: @user, url: users_path, method: "POST", id: "add-form") do |f| %>
+                  <%= number_field_tag 'shoe_size', nil, within: 6...13, placeholder: "Select size:", id: "shoe-size"%>
+                  <%= f.submit "Add to cart", id: "add-cart"%>
+                <% end %>
+
+                <%= link_to "Details", shoe_path(shoe), id: "shoe-details"  %>
             </div>
         <% end %>
     </section>
