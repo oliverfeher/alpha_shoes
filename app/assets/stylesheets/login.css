@@ -72,3 +72,20 @@ input {
     width: 60%;
     align-self: center;
 }
+
+.brand-tag {
+    font-family: 'Rubik Mono One', sans-serif;
+    text-align: center;
+    font-size: 3.5em;
+}
+
+.model-tag {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.price-tag {
+    text-align: center;
+    font-size: 3em;
+}
