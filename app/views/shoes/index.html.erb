@@ -21,7 +21,6 @@
               <form class="add" onsubmit="addToCart()">
                   <%= number_field_tag 'size', nil, within: 6...13, placeholder: "Select size:", class: "shoe-size", required: true %>
                   <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
-                  <div id="addHere"></div>
                   <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
                   <%= submit_tag "Add to cart", class: "add-cart"%>
               </form>
