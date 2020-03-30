@@ -32,7 +32,6 @@
     <script>
       function addToCart() {
         event.preventDefault()
-        debugger
         const url = "/users/<%= current_user.id %>/cart"
           fetch(url, {
               method : "POST",
@@ -41,7 +40,7 @@
                   shoeId : event.target.id.value
               })
           });
-      }
-
-      
+          let cartItems = document.getElementById("cart-items");
+          cartItems.innerText = parseInt(cartItems.innerText) + 1;
+      }; 
       </script>

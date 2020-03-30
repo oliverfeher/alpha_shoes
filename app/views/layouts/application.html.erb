@@ -31,8 +31,9 @@
         </li>
         <% if logged_in? %>
           <li id="logo-container">
-            <div>
+            <div id="cart-container">
               <%= image_tag("logos/shopping-cart", id: "shoppingcart")%>
+              <%= content_tag(:p, cart_items, id: "cart-items") %>
             </div>
             <div>
               <%= image_tag("logos/user", id: "user-logo")%>

@@ -201,6 +201,16 @@
     user-select: none;
   }
   
+  #cart-items {
+    position: absolute;
+    top: 2em;
+    right: 4.7em;
+    font-size: 3em;
+    font-weight: bold;
+    background-color: #E1AF5A;
+    padding: 1px 15px;
+    border-radius: 50%;
+  }
   /* Position the "next button" to the right */
   .next {
     right: 0;
