@@ -30,6 +30,7 @@
 <script>
     function deleteShoe() {
         event.preventDefault()
+        debugger;
         const url = "/users/<%= current_user.id %>/cart"
           fetch(url, {
               method : "DELETE",
@@ -37,5 +38,10 @@
                   shoeId : event.target.id.value
               })
           });
+          let cartItems = document.getElementById("cart-items");
+          cartItems.innerText = parseInt(cartItems.innerText) - 1;
+
+          let container = event.target.parentNode;
+          event.target.parentNode.parentNode.removeChild(container);
     }
 </script>
