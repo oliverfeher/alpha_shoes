@@ -23,10 +23,11 @@ class CartsController < ApplicationController
     def destroy
         data_sent = ActiveSupport::JSON.decode(request.body.read)
         shoe = Shoe.find_by(id: data_sent.values.first)
-        cart = current_user.cart.shoes
-        cart_array = cart.to_a
+        cart = current_user.cart
+        cart_array = cart.shoes.to_a
         cart_array.delete_if {|x| x.id == shoe.id}
-        cart = cart_array
+        cart.shoes = cart_array
+        cart.save
     end
 
 end

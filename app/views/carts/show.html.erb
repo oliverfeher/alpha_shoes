@@ -30,7 +30,6 @@
 <script>
     function deleteShoe() {
         event.preventDefault()
-        debugger;
         const url = "/users/<%= current_user.id %>/cart"
           fetch(url, {
               method : "DELETE",
