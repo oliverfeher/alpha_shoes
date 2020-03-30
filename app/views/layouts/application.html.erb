@@ -101,18 +101,18 @@
 
   
       function toUserPage() {
-        window.location.href = "/users/login"
+        window.location.href = "/users/login";
       }
 
       let userLogo = document.getElementById("user-logo");
-      userLogo.onclick = toUserPage
+      userLogo.onclick = toUserPage;
 
       function toCart() {
-        window.location.href = "/users/<%= current_user.id%>/cart"
+        window.location.href = "/users/<%= current_user.id if current_user %>/cart";
       }
 
       let shoppingCart = document.getElementById("shoppingcart");
-      shoppingCart.onclick = toCart
+      shoppingCart.onclick = toCart;
       
 
   </script>

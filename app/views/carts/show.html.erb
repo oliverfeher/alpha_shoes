@@ -1,0 +1,3 @@
+<% current_user.cart.shoes.each do |shoe| %>
+    <%= image_tag(shoe.pic_url, class: "container-img")%>
+<% end %>

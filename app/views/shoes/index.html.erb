@@ -14,13 +14,34 @@
                 <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
                 <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
                 <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
+                
 
-                <%= form_with(model: @user, url: users_path, method: "POST", id: "add-form") do |f| %>
-                  <%= number_field_tag 'shoe_size', nil, within: 6...13, placeholder: "Select size:", id: "shoe-size"%>
-                  <%= f.submit "Add to cart", id: "add-cart"%>
-                <% end %>
+              <form class="add" onsubmit="addToCart()">
+                  <%= number_field_tag 'size', nil, within: 6...13, placeholder: "Select size:", class: "shoe-size", required: true %>
+                  <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
+                  <div id="addHere"></div>
+                  <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+                  <%= submit_tag "Add to cart", class: "add-cart"%>
+              </form>
 
-                <%= link_to "Details", shoe_path(shoe), id: "shoe-details"  %>
+                <%= link_to "Details", shoe_path(shoe), class: "shoe-details"  %>
             </div>
         <% end %>
     </section>
+
+    <script>
+      function addToCart() {
+        event.preventDefault()
+        debugger
+        const url = "/users/<%= current_user.id %>/cart"
+          fetch(url, {
+              method : "POST",
+              body : JSON.stringify({
+                  shoeSize : event.target.size.value,
+                  shoeId : event.target.id.value
+              })
+          });
+      }
+
+      
+      </script>
