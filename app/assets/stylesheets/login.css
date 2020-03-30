@@ -146,5 +146,22 @@ input {
     font-weight: bold;
 }
 
+.cart-item-container {
+    display: flex;
+    background-color: white;
+    padding: 5%;
+    border: 5px black solid;
+    margin-bottom: 3%;
+}
 
+.split2 {
+    align-self: center;
+    margin: auto;
+}
+
+.delete {
+    margin: auto;
+    width: 15%;
+    height: 15%;
+}
 

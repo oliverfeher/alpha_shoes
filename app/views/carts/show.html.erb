@@ -1,3 +1,23 @@
-<% current_user.cart.shoes.each do |shoe| %>
-    <%= image_tag(shoe.pic_url, class: "container-img")%>
-<% end %>
+<section id="main">
+      <%= image_tag("logos/triangles", id: "triangle1")%>
+      <div id="main-title">
+        <p class="title-21">YOUR</p>
+        <p class="title-1">CART</p>
+      </div>
+      <%= image_tag("logos/triangles", id: "triangle2")%>
+</section>
+
+<section id="shoes-list-container">
+    <% @cart.each do |shoe| %>
+        <%= content_tag(:div, "", class: "cart-item-container") do %>
+            <%= image_tag(shoe.pic_url, class: "split1")%>
+            <%= content_tag(:div, "", class: "split2") do %>
+                <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
+                <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
+                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
+            <% end %>
+            <%= image_tag("logos/delete", class: "delete")%>
+        <% end %>
+     <% end %>
+</section>
+

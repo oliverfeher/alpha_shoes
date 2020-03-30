@@ -3,6 +3,7 @@ class CartsController < ApplicationController
     skip_before_action :verify_authenticity_token, dependent: :nullify
 
     def show
+        @cart = current_user.cart.shoes
     end 
 
     def create
