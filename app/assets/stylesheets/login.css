@@ -151,17 +151,30 @@ input {
     background-color: white;
     padding: 5%;
     border: 5px black solid;
-    margin-bottom: 3%;
+    margin: auto 3% 5%;
+    
 }
-
+.split1{
+    margin: auto;
+    width: 200px;
+    height: 100%;
+}
 .split2 {
     align-self: center;
+    margin: auto 0px  auto 5%;
+}
+
+.delete-form {
+    margin-left: 3%;
+}
+.delete {
+    width: 100px;
+    height: 100px;
     margin: auto;
 }
 
-.delete {
-    margin: auto;
-    width: 15%;
-    height: 15%;
+.button-pic {
+    background-color: white;
+    border: none;
 }
 

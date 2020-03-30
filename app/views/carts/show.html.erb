@@ -16,8 +16,26 @@
                 <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
                 <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
             <% end %>
-            <%= image_tag("logos/delete", class: "delete")%>
+            <form class="delete-form" onsubmit="deleteShoe()">
+                <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
+                <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+                <button type="submit" class="button-pic">
+                    <%= image_tag("logos/delete", class: "delete")%>
+                </button>
+            </form>
         <% end %>
      <% end %>
 </section>
 
+<script>
+    function deleteShoe() {
+        event.preventDefault()
+        const url = "/users/<%= current_user.id %>/cart"
+          fetch(url, {
+              method : "DELETE",
+              body : JSON.stringify({
+                  shoeId : event.target.id.value
+              })
+          });
+    }
+</script>

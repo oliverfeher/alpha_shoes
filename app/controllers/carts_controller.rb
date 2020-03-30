@@ -19,6 +19,14 @@ class CartsController < ApplicationController
         # for an order shoe size will equal to  data_sent.values.first
         # Cart.shoes.to_a , then array.shift() to remove element, cart.shoes = array
     end
-
+    
+    def destroy
+        data_sent = ActiveSupport::JSON.decode(request.body.read)
+        shoe = Shoe.find_by(id: data_sent.values.first)
+        cart = current_user.cart.shoes
+        cart_array = cart.to_a
+        cart_array.delete_if {|x| x.id == shoe.id}
+        cart = cart_array
+    end
 
 end
