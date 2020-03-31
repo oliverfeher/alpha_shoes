@@ -28,6 +28,7 @@ class CartsController < ApplicationController
         cart_array.delete_if {|x| x.id == shoe.id}
         cart.shoes = cart_array
         cart.save
+        cart.carts_shoes.each {|x| x.destroy if x.shoe_id.nil? }
     end
 
 end
