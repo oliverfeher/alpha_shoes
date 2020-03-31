@@ -10,14 +10,15 @@
 <section id="shoes-list-container">
     <% @cart.each do |shoe| %>
         <%= content_tag(:div, "", class: "cart-item-container") do %>
-            <%= image_tag(shoe.pic_url, class: "split1")%>
+            <%= image_tag(Shoe.find_by(id: shoe.shoe_id).pic_url, class: "split1")%>
             <%= content_tag(:div, "", class: "split2") do %>
-                <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
-                <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
-                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
+                <%= content_tag(:p, Shoe.find_by(id: shoe.shoe_id).brand, class: "brand-tag") %>
+                <%= content_tag(:p, Shoe.find_by(id: shoe.shoe_id).model.upcase, class: "model-tag") %>
+                <%= content_tag(:p, "Size: #{Size.find_by(id: shoe.size_id).shoe_size}", class: "model-tag")%>
+                <%= content_tag(:p, "$#{Shoe.find_by(id: shoe.shoe_id).price}", class: "price-tag") %>
             <% end %>
             <form class="delete-form" onsubmit="deleteShoe()">
-                <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
+                <%= hidden_field_tag  "id", Shoe.find_by(id: shoe.shoe_id).id, class: "Shoe.find_by(id: shoe.shoe_id)-id" %>
                 <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
                 <button type="submit" class="button-pic">
                     <%= image_tag("logos/delete", class: "delete")%>
