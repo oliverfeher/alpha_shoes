@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_034406) do
+ActiveRecord::Schema.define(version: 2020_03_31_204935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 2020_03_31_034406) do
     t.string "state"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "content"
+    t.integer "user_id"
+  end
+
   create_table "shoes", force: :cascade do |t|
     t.string "brand"
     t.string "model"
@@ -42,6 +48,11 @@ ActiveRecord::Schema.define(version: 2020_03_31_034406) do
     t.string "detail3"
     t.string "detail4"
     t.string "pic_url"
+  end
+
+  create_table "shoes_reviews", force: :cascade do |t|
+    t.integer "shoe_id"
+    t.integer "review_id"
   end
 
   create_table "sizes", force: :cascade do |t|
