@@ -16,6 +16,7 @@ class CartsController < ApplicationController
             shoe = Shoe.find_by(id: data_sent.values.second)
             cart = current_user.cart
             size = Size.find_by(shoe_size: data_sent.values.first)
+            
             sql = "INSERT INTO carts_shoes (cart_id, shoe_id, size_id) VALUES (#{cart.id}, #{shoe.id}, #{size.id})"
             ActiveRecord::Base.connection.execute(sql)
         else

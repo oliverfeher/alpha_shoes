@@ -43,5 +43,14 @@
 
           let container = event.target.parentNode;
           event.target.parentNode.parentNode.removeChild(container);
+
+          if (parseInt(cartItems.innerText) == 0) {
+            g = document.createElement('p');
+            g.setAttribute("id", "cart-empty");
+            g.innerText = "Your cart is empty!"
+
+            container = document.getElementById("shoes-list-container");
+            container.appendChild(g);
+          }
     }
 </script>
