@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     resource :cart, only: [:show, :create, :destroy]
     resource :details, only: [:new, :show,]
   end
-  resources :shoes, only: [:index, :show]
+
+  resources :shoes, only: [:index, :show] do
+    resource :reviews, only: [:create, :new, :show]
+  end
+
 end

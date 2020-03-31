@@ -1,9 +1,11 @@
-<section id="detail-container">
+<%= content_tag(:section, id: "detail-container") do %>
         <%= image_tag(@shoe.pic_url, class: "detail-1")%>
         <%= content_tag(:p, @shoe.brand.upcase, class: "detail-2") %>
         <%= content_tag(:p, @shoe.model.upcase, class: "detail-3") %>
+        <%= link_to "REVIEWS", shoe_reviews_path(@shoe), class: "reviews"%>
         <%= content_tag(:p, "+  #{@shoe.detail1}", class: "detail") %>
         <%= content_tag(:p, "+  #{@shoe.detail2}", class: "detail") %>
         <%= content_tag(:p, "+  #{@shoe.detail3}", class: "detail") %>
         <%= content_tag(:p, "+  #{@shoe.detail4}", class: "detail") %>
-</section>
+        <%= link_to "Leave a review", new_shoe_reviews_path(@shoe), id: "review"%>
+<% end %>

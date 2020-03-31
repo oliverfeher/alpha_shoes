@@ -224,7 +224,7 @@ input {
     display: flex;
     flex-direction: column;
     height: 75%;
-    width: 80%;
+    width: 85%;
     align-self: center;
     border: 5px black solid;
 }
@@ -244,13 +244,13 @@ body {
     margin-top: 5%;
     font-size: 3em;
     text-align: center;
+    color: black;
 }
 
 .detail-3 {
     font-weight: bold;
     font-size: 3em;
     text-align: center;
-    margin-bottom: 10%;
 }
 
 .detail {
@@ -259,4 +259,26 @@ body {
     margin-bottom: 5%;
     font-size: 2.5em;
     text-align: center;
+}
+
+.reviews {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #E1AF5A;
+    font-size: 3.5em;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#review {
+    font-size: 3em;
+    text-align: center;
+    align-self: center;
+    color: black;
+    margin-bottom: 5%;
+    background-color: #E1AF5A;
+    padding: 10px;
+    width: 60%;
+    border: 3px black solid;
+    font-weight: bold;
 }
