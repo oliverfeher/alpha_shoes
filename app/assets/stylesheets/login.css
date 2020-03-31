@@ -216,3 +216,47 @@ input {
     color: #E1AF5A;
     padding-bottom: 15%;
 }
+
+#detail-container {
+    top: 15%;
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    width: 80%;
+    align-self: center;
+    border: 5px black solid;
+}
+
+.detail-1 {
+    margin-top: 10%;
+    height: 25%;
+    align-self: center;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-2 {
+    font-family: 'Rubik Mono One', sans-serif;
+    margin-top: 5%;
+    font-size: 3em;
+    text-align: center;
+}
+
+.detail-3 {
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.detail {
+    align-self: center;
+    width: 80%;
+    margin-bottom: 5%;
+    font-size: 2.5em;
+    text-align: center;
+}
