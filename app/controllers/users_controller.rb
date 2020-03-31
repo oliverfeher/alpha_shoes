@@ -23,4 +23,10 @@ class UsersController < ApplicationController
     def edit
     end
 
+    def update
+        current_user.update(email: params[:email])
+        current_user.detail.update(full_name: params[:full_name], address: params[:address], city: params[:city], state: params[:state])
+        redirect_to edit_user_path(current_user)
+    end
+
 end
