@@ -102,7 +102,7 @@
 
   
       function toUserPage() {
-        window.location.href = "/users/login";
+        window.location.href = "/users/<%= current_user.id if current_user %>/edit";
       }
 
       let userLogo = document.getElementById("user-logo");

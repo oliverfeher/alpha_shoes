@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
 
-  resources :users, only: [:new, :create] do
+  resources :users, only: [:new, :create, :edit] do
     resource :cart, only: [:show, :create, :destroy]
     resource :details, only: [:new, :show,]
   end
