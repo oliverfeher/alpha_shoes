@@ -8,24 +8,29 @@
 </section>
 
 <section id="shoes-list-container">
-    <% @cart.each do |shoe| %>
-        <%= content_tag(:div, "", class: "cart-item-container") do %>
-            <%= image_tag(Shoe.find_by(id: shoe.shoe_id).pic_url, class: "split1")%>
-            <%= content_tag(:div, "", class: "split2") do %>
-                <%= content_tag(:p, Shoe.find_by(id: shoe.shoe_id).brand, class: "brand-tag") %>
-                <%= content_tag(:p, Shoe.find_by(id: shoe.shoe_id).model.upcase, class: "model-tag") %>
-                <%= content_tag(:p, "Size: #{Size.find_by(id: shoe.size_id).shoe_size}", class: "model-tag")%>
-                <%= content_tag(:p, "$#{Shoe.find_by(id: shoe.shoe_id).price}", class: "price-tag") %>
+    <% if !@cart.empty? %>
+        <% @cart.each do |shoe| %>
+            <%= content_tag(:div, "", class: "cart-item-container") do %>
+                <%= image_tag(Shoe.find_by(id: shoe.shoe_id).pic_url, class: "split1")%>
+                <%= content_tag(:div, "", class: "split2") do %>
+                    <%= content_tag(:p, Shoe.find_by(id: shoe.shoe_id).brand, class: "brand-tag") %>
+                    <%= content_tag(:p, Shoe.find_by(id: shoe.shoe_id).model.upcase, class: "model-tag") %>
+                    <%= content_tag(:p, "Size: #{Size.find_by(id: shoe.size_id).shoe_size}", class: "model-tag")%>
+                    <%= content_tag(:p, "$#{Shoe.find_by(id: shoe.shoe_id).price}", class: "price-tag") %>
+                <% end %>
+                <form class="delete-form" onsubmit="deleteShoe()">
+                    <%= hidden_field_tag  "id", Shoe.find_by(id: shoe.shoe_id).id, class: "Shoe.find_by(id: shoe.shoe_id)-id" %>
+                    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+                    <button type="submit" class="button-pic">
+                        <%= image_tag("logos/delete", class: "delete")%>
+                    </button>
+                </form>
             <% end %>
-            <form class="delete-form" onsubmit="deleteShoe()">
-                <%= hidden_field_tag  "id", Shoe.find_by(id: shoe.shoe_id).id, class: "Shoe.find_by(id: shoe.shoe_id)-id" %>
-                <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
-                <button type="submit" class="button-pic">
-                    <%= image_tag("logos/delete", class: "delete")%>
-                </button>
-            </form>
         <% end %>
-     <% end %>
+    <% else %>
+            <%= content_tag(:p, "Your cart is empty!", class: "cart-empty") %>
+            <%= link_to("Click here to shop!", shoes_path, class: "click-shop") %>
+    <% end %>
 </section>
 
 <script>
@@ -46,11 +51,17 @@
 
           if (parseInt(cartItems.innerText) == 0) {
             g = document.createElement('p');
-            g.setAttribute("id", "cart-empty");
+            g.setAttribute("class", "cart-empty");
             g.innerText = "Your cart is empty!"
+
+            a = document.createElement('a');
+            a.setAttribute("class", "click-shop");
+            a.setAttribute("href", "/shoes");
+            a.innerText = "Click here to shop!"
 
             container = document.getElementById("shoes-list-container");
             container.appendChild(g);
+            container.appendChild(a);
           }
     }
 </script>

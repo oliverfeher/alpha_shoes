@@ -85,14 +85,21 @@
   nav {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    width: 100%;
+    background-color: #0E494D;
+    border-bottom: solid 5px #E1AF5A;
+    z-index: 5;
   }
-
+  
   #nav-bar {
     display: flex;
     list-style: none;
+    padding-bottom: 20px;
   }
 
   #main {
+      padding-top: 15%;
       text-align: center;
   }
 

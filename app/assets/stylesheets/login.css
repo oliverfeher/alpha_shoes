@@ -179,6 +179,21 @@ input {
     border: none;
 }
 
-#cart-empty {
+.cart-empty {
+    font-size: 4.5em;
+    color: white;
     text-align: center;
+    font-weight: bold;
+    margin-bottom: 15%;
+}
+
+.click-shop {
+    font-size: 3em;
+    color: black;
+    font-weight: bold;
+    margin-left: 21%;
+    background-color: #E1AF5A;
+    border-radius: 20px;
+    padding: 15px;
+
 }
