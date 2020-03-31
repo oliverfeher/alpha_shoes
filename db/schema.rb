@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_011432) do
+ActiveRecord::Schema.define(version: 2020_03_31_034406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_011432) do
   create_table "carts_shoes", force: :cascade do |t|
     t.integer "cart_id"
     t.integer "shoe_id"
+    t.integer "size_id"
   end
 
   create_table "details", force: :cascade do |t|
@@ -41,6 +42,10 @@ ActiveRecord::Schema.define(version: 2020_03_31_011432) do
     t.string "detail3"
     t.string "detail4"
     t.string "pic_url"
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.integer "shoe_size"
   end
 
   create_table "users", force: :cascade do |t|

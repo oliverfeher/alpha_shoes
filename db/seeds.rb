@@ -11,4 +11,10 @@ Shoe.create(brand: "alpha", model: "kicker 5 run", price: 150, detail1: "ALPHA t
 Shoe.create(brand: "alpha", model: "kicker 5 air", price: 190, detail1: "ALPHA technology provides 'zero gravity feel' to maintain energy return", detail2: "External heel counter combined with stability chassis creates the ultimate in stable support", detail3: "3D molded midfoot panel provides added structure", detail4: "Full rubber outsole for elevated traction & durability", pic_url: "https://svgshare.com/i/JZd.svg")
 Shoe.create(brand: "alpha", model: "kicker 5 bounce", price: 150, detail1: "ALPHA technology provides 'zero gravity feel' to maintain energy return", detail2: "External heel counter combined with stability chassis creates the ultimate in stable support", detail3: "3D molded midfoot panel provides added structure", detail4: "Full rubber outsole for elevated traction & durability", pic_url: "https://svgshare.com/i/J_9.svg")
 Shoe.create(brand: "alpha", model: "kicker 5 galaxy", price: 220, detail1: "ALPHA technology provides 'zero gravity feel' to maintain energy return", detail2: "External heel counter combined with stability chassis creates the ultimate in stable support", detail3: "3D molded midfoot panel provides added structure", detail4: "Full rubber outsole for elevated traction & durability", pic_url: "https://svgshare.com/i/JZM.svg")
-
+Size.create(shoe_size: 6)
+Size.create(shoe_size: 7)
+Size.create(shoe_size: 8)
+Size.create(shoe_size: 9)
+Size.create(shoe_size: 10)
+Size.create(shoe_size: 11)
+Size.create(shoe_size: 12)
