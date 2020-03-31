@@ -33,6 +33,12 @@
     <% end %>
 </section>
 
+<%= content_tag(:section,"", id: "order") do %>
+    <%= content_tag(:p, "TOTAL", class: "total") %>
+    <%= content_tag(:p, "$#{@total}", id: "total-amount") %>
+<% end %>
+
+
 <script>
     function deleteShoe() {
         event.preventDefault()
@@ -43,6 +49,16 @@
                   shoeId : event.target.id.value
               })
           });
+
+          let price = event.target.parentNode.childNodes[3].childNodes[7].innerText
+          price = price.replace("$", "")
+          price = parseInt(price)
+          let totalElement = document.getElementById("total-amount")
+          let total = totalElement.innerText.replace("$", "")
+          total = parseInt(total)
+          totalElement.innerText = `$${total - price}`
+
+
           let cartItems = document.getElementById("cart-items");
           cartItems.innerText = parseInt(cartItems.innerText) - 1;
 
@@ -50,18 +66,18 @@
           event.target.parentNode.parentNode.removeChild(container);
 
           if (parseInt(cartItems.innerText) == 0) {
-            g = document.createElement('p');
+            let g = document.createElement('p');
             g.setAttribute("class", "cart-empty");
             g.innerText = "Your cart is empty!"
 
-            a = document.createElement('a');
+            let a = document.createElement('a');
             a.setAttribute("class", "click-shop");
             a.setAttribute("href", "/shoes");
             a.innerText = "Click here to shop!"
 
-            container = document.getElementById("shoes-list-container");
+            let container = document.getElementById("shoes-list-container");
             container.appendChild(g);
             container.appendChild(a);
-          }
+          } 
     }
 </script>

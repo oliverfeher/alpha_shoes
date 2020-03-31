@@ -197,3 +197,22 @@ input {
     padding: 15px;
 
 }
+
+#order {
+    width: 80%;
+    margin: 10% auto;
+}
+.total {
+    font-size: 4em;
+    color: white;
+    text-align: center;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+#total-amount {
+    
+    text-align: center;
+    font-size: 4em;
+    color: #E1AF5A;
+    padding-bottom: 15%;
+}
