@@ -1,12 +1,13 @@
 <%= stylesheet_link_tag 'application' %>
-<section id="main">
-    <%= image_tag("logos/triangles", id: "triangle1")%>
-    <div id="main-title">
-    <p class="title-21">ALPHA</p>
-    <p class="title-1">SHOES</p>
-    </div>
-    <%= image_tag("logos/triangles", id: "triangle2")%>
-</section>
+<%= content_tag(:section, "", id: "main") do %>
+      <%= image_tag("logos/triangles", id: "triangle1")%>
+      <%= content_tag(:div, "", id: "main-title") do %>
+        <%= content_tag(:p, "ALPHA", class: "title-21")%>
+        <%= content_tag(:p, "SHOES", class: "title-1")%>
+      <% end %>
+      <%= image_tag("logos/triangles", id: "triangle2")%>
+<% end %>
+
 <%= form_with(url: "/sessions", method: "POST") do |f| %>
 
     <%= f.label :email, "User E-mail" %>
@@ -18,7 +19,7 @@
     <%= f.submit "LOG IN", id: "button"%>
 
     <% flash.each do |name, msg| %>
-        <p id="error-msg"><%= msg %></p>
+        <%= content_tag(:p, "#{msg}", id: "error-msg") %>
     <% end %>
 
     <% if !logged_in? %>

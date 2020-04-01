@@ -24,6 +24,6 @@
     <%= f.submit "CONFIRM", id: "button"%>
 
     <% flash.each do |name, msg| %>
-        <% content_tag(:p, "#{msg}", id: "error-msg") %>
+        <%= content_tag(:p, "#{msg}", id: "error-msg") %>
     <% end %>
 <% end %>
