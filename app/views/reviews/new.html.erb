@@ -1,11 +1,12 @@
-<section id="main">
+<%= content_tag(:section, "", id: "main") do %>
       <%= image_tag("logos/triangles", id: "triangle1")%>
-      <div id="main-title">
-        <p class="title-21">LEAVE</p>
-        <p class="title-1">REVIEW</p>
-      </div>
+      <%= content_tag(:div, "", id: "main-title") do %>
+        <%= content_tag(:p, "LEAVE", class: "title-21")%>
+        <%= content_tag(:p, "REVIEW", class: "title-1")%>
+      <% end %>
       <%= image_tag("logos/triangles", id: "triangle2")%>
-</section>
+<% end %>
+
 
 
 <%= form_with(model: @review, url: "/shoes/#{@shoe.id}/reviews", method: "POST", id: "review_form") do |f| %>
