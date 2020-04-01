@@ -298,6 +298,39 @@ body {
 #review_content {
     margin-top: 2%;
     height: 500px;
-    font-size: 5em;
+    font-size: 4em;
     margin-bottom: 5%;
+}
+
+.review-auth {
+    margin-top: 5%;
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.review-desc {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.line {
+    border-bottom: 5px solid #E1AF5A;
+    width: 80%;
+    align-self: center;
+}
+
+.line2 {
+    margin-top: 5%;
+    border-bottom: 5px solid black;
+    width: 80%;
+    align-self: center;
+}
+
+.review-rat {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 5%;
+    color: #E1AF5A
 }
