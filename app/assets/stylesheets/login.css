@@ -283,19 +283,19 @@ body {
     font-weight: bold;
 }
 
-#edit_shoe_1 {
+#review_form {
     margin-top: 15%;
     width: 80%;
 }
 
-#shoe_review_rating {
+#review_rating {
     height: 100px;
     font-size: 3em;
     text-align: right;
     margin-bottom: 5%;
 }
 
-#shoe_review_content {
+#review_content {
     margin-top: 2%;
     height: 500px;
     font-size: 5em;

@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_204935) do
     t.integer "rating"
     t.string "content"
     t.integer "user_id"
+    t.integer "shoe_id"
   end
 
   create_table "shoes", force: :cascade do |t|
@@ -48,11 +49,6 @@ ActiveRecord::Schema.define(version: 2020_03_31_204935) do
     t.string "detail3"
     t.string "detail4"
     t.string "pic_url"
-  end
-
-  create_table "shoes_reviews", force: :cascade do |t|
-    t.integer "shoe_id"
-    t.integer "review_id"
   end
 
   create_table "sizes", force: :cascade do |t|
