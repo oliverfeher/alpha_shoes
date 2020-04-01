@@ -1,11 +1,11 @@
- <section id="main">
+<%= content_tag(:section, "", id: "main") do %>
       <%= image_tag("logos/triangles", id: "triangle1")%>
-      <div id="main-title">
-        <p class="title-21">EDIT</p>
-        <p class="title-1">ACCOUNT</p>
-      </div>
+      <%= content_tag(:div, "", id: "main-title") do %>
+        <%= content_tag(:p, "EDIT", class: "title-21")%>
+        <%= content_tag(:p, "ACCOUNT", class: "title-1")%>
+      <% end %>
       <%= image_tag("logos/triangles", id: "triangle2")%>
-    </section>
+<% end %>
 
     <%= form_with(url: "/users/#{current_user.id}", method: "PATCH") do |f| %>
 
@@ -28,6 +28,6 @@
     <%= f.submit "UPDATE", id: "button"%>
 
     <% flash.each do |name, msg| %>
-        <p id="error-msg"><%= msg %></p>
+        <%= content_tag(:p, "#{msg}", id: "error-msg") %>
     <% end %>
 <% end %>
