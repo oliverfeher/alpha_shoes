@@ -1,13 +1,14 @@
-<section id="main">
-      <%= image_tag("logos/triangles", id: "triangle1")%>
-      <div id="main-title">
-        <p class="title-21">YOUR</p>
-        <p class="title-1">CART</p>
-      </div>
-      <%= image_tag("logos/triangles", id: "triangle2")%>
-</section>
 
-<section id="shoes-list-container">
+<%= content_tag(:section, "", id: "main") do %>
+      <%= image_tag("logos/triangles", id: "triangle1")%>
+      <%= content_tag(:div, "", id: "main-title") do %>
+        <%= content_tag(:p, "YOUR", class: "title-21")%>
+        <%= content_tag(:p, "CART", class: "title-1")%>
+      <% end %>
+      <%= image_tag("logos/triangles", id: "triangle2")%>
+<% end %>
+
+<%= content_tag(:section, "", id: "shoes-list-container") do %>
     <% if !@cart.empty? %>
         <% @cart.each do |shoe| %>
             <%= content_tag(:div, "", class: "cart-item-container") do %>
@@ -31,7 +32,7 @@
             <%= content_tag(:p, "Your cart is empty!", class: "cart-empty") %>
             <%= link_to("Click here to shop!", shoes_path, class: "click-shop") %>
     <% end %>
-</section>
+<% end %>
 
 <%= content_tag(:section,"", id: "order") do %>
     <%= content_tag(:p, "TOTAL", class: "total") %>
