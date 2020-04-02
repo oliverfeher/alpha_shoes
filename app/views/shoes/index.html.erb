@@ -89,6 +89,9 @@
               })
           });
           let cartItems = document.getElementById("cart-items");
+           if (cartItems.value === undefined) {
+             cartItems.innerText = 0;           
+             };
           cartItems.innerText = parseInt(cartItems.innerText) + 1;
           let a = Array.from(document.getElementsByClassName("shoe-size"))
           for(x of a) { x.placeholder = "Select size:", x.value = ""}

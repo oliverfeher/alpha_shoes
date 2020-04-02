@@ -366,3 +366,16 @@ body {
 #low {
     margin-right: auto;
 }
+
+#fb-login {
+    font-size: 3em;
+    text-align: center;
+    background-color: #3D5B99;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    width: 50%;
+    border-radius: 25px;
+    align-self: center;
+    margin-top: -25%;
+}
