@@ -9,8 +9,55 @@
       <%= image_tag("logos/triangles", id: "triangle2")%>
     </section>
 
-    <section id="shoes-list-container">
+    <div id="order">
+      <p id="low" onclick = "descend()">Price low</p>
+      <p id="high" onclick = "ascend()">Price high</p>
+    </div>
+
+    <section class="shoes-list-container" id="original">
         <% @shoes.each do |shoe| %>
+            <div class="shoe-container">
+                <%= image_tag(shoe.pic_url, class: "container-img")%>
+                <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
+                <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
+                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
+                
+
+              <form class="add" onsubmit="addToCart()">
+                  <%= number_field_tag 'size', nil, within: 6...13, placeholder: "Select size:", class: "shoe-size", required: true %>
+                  <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
+                  <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+                  <%= submit_tag "Add to cart", class: "add-cart"%>
+              </form>
+
+                <%= link_to "Details", shoe_path(shoe), class: "shoe-details"  %>
+            </div>
+        <% end %>
+    </section>
+
+    <section class="shoes-list-container ascend" id="ascend">
+        <% @shoes.order(price: :asc).each do |shoe| %>
+            <div class="shoe-container">
+                <%= image_tag(shoe.pic_url, class: "container-img")%>
+                <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
+                <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
+                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
+                
+
+              <form class="add" onsubmit="addToCart()">
+                  <%= number_field_tag 'size', nil, within: 6...13, placeholder: "Select size:", class: "shoe-size", required: true %>
+                  <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
+                  <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+                  <%= submit_tag "Add to cart", class: "add-cart"%>
+              </form>
+
+                <%= link_to "Details", shoe_path(shoe), class: "shoe-details"  %>
+            </div>
+        <% end %>
+    </section>
+
+    <section class="shoes-list-container descend" id="descend">
+        <% @shoes.order(price: :desc).each do |shoe| %>
             <div class="shoe-container">
                 <%= image_tag(shoe.pic_url, class: "container-img")%>
                 <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
@@ -46,6 +93,24 @@
           let a = Array.from(document.getElementsByClassName("shoe-size"))
           for(x of a) { x.placeholder = "Select size:", x.value = ""}
       }; 
+
+      function descend() {
+        let original = document.getElementById("original")
+        let listDescend = document.getElementById("descend");
+        let listAscend = document.getElementById("ascend");
+        original.style.display = "none";
+        listAscend.style.display = "none"
+        listDescend.style.display = "block";
+      }
+
+      function ascend() {
+        let original = document.getElementById("original")
+        let listAscend = document.getElementById("ascend");
+        let listDescend = document.getElementById("descend");
+        listDescend.style.display = "none";
+        original.style.display = "none";
+        listAscend.style.display = "block";
+      }
       </script>
 
-      document.getElementsByClassName("shoe-size")[0].placeholder = "Select size:"
+   

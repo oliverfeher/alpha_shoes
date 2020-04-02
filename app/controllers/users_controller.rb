@@ -8,8 +8,7 @@ class UsersController < ApplicationController
         @user = User.create(email: params[:user][:email], password: params[:user][:password])
         if @user.errors.any?
             # redirect_to new_user_path
-            flash[:user_errors] = @user.errors.full_messages
-            redirect_to action: "new"
+             render :new
         else
             session[:user_id] = @user.id   #Upon successful sign-up user is logged in automatically!
             if current_user.detail
