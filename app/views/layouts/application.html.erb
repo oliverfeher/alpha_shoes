@@ -29,6 +29,22 @@
         <li>
             <%= image_tag("logos/hamburger", id: "overlay-hamburger")%>
         </li>
+        <li>
+          <%= link_to "HOME", "/", class: "nav-link" %>
+        </li>
+        <li>
+          <%= link_to "PRODUCTS", "/shoes", class: "nav-link" %>
+        </li>
+        <li>
+          <%= link_to "ORDERS", "/", class: "nav-link" %>
+        </li>
+        <li>
+          <% if current_user%>
+            <%= link_to "LOGOUT", "/users/logout", class: "nav-link" %>
+          <% else %>
+            <%= link_to "LOGIN", "/users/login", class: "nav-link" %>
+          <% end %>
+        </li>
         <% if logged_in? %>
           <li id="logo-container">
             <div id="cart-container">

@@ -67,6 +67,7 @@
           event.target.parentNode.parentNode.removeChild(container);
 
           if (parseInt(cartItems.innerText) == 0) {
+            console.log("test")
             let g = document.createElement('p');
             g.setAttribute("class", "cart-empty");
             g.innerText = "Your cart is empty!"
@@ -76,7 +77,7 @@
             a.setAttribute("href", "/shoes");
             a.innerText = "Click here to shop!"
 
-            let container = document.getElementById("shoes-list-container");
+            let container = document.getElementsByClassName("shoes-list-container")[0];
             container.appendChild(g);
             container.appendChild(a);
           } 

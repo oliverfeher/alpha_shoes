@@ -89,7 +89,7 @@
               })
           });
           let cartItems = document.getElementById("cart-items");
-           if (cartItems.value === undefined) {
+           if (cartItems.innerText === "") {
              cartItems.innerText = 0;           
              };
           cartItems.innerText = parseInt(cartItems.innerText) + 1;

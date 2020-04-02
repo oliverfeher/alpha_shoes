@@ -91,7 +91,9 @@
     border-bottom: solid 5px #E1AF5A;
     z-index: 5;
   }
-  
+  .nav-link {
+    display: none;
+  }
   #nav-bar {
     display: flex;
     list-style: none;
@@ -409,3 +411,97 @@
     }
 }
 
+@media only screen and (min-width: 1200px) {
+  #overlay-hamburger {
+    display: none;
+  }
+  #shoppingcart {
+    justify-self: center;
+    height: 50px;
+    width: 50px;
+  }
+  #user-logo {
+    margin-left: 30%;
+    justify-self: center;
+    height: 50px;
+    width: 50px;
+  }
+  #nav-bar {
+    padding: 0;
+    height: 5em;
+  }
+  #user-name {
+    color: white;
+    font-size: 1em;
+    margin-right: -40%;
+    position: relative;
+  }
+  #logo-title {
+    font-size: 2em;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: white;
+}
+  #logo-desc {
+    color: white;
+    font-size: 1.5em;
+    margin-top: -10%;
+    margin-bottom: 5%;
+  }
+  .nav-link {
+margin-top: 15px;
+    padding: 10px;
+    display: block;
+    margin-left: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .nav-link:hover {
+    background-color: #E1AF5A;
+    color: #0E494D;
+    padding: 10px;
+  }
+  #main {
+    display: none;
+  }
+  #shop-now {
+    font-size: 1.5em;
+    padding: 0.5%;
+    width: 10%;
+    align-self: center;
+  }
+  #shop-now-container {
+    margin-top: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  #shoes-container {
+    margin-top: -22%;
+    margin-bottom: 0;
+    align-self: center;
+    width: 30%;
+  }
+
+  footer {
+    height: 3.5em;
+    margin: 0;
+  }
+  #footer li {
+    margin-top: 0.7%;
+  }
+  #footer-right {
+    font-size: 1em;
+    margin-left: auto;
+  }
+  #footer-left {
+    font-size: 1em;
+  }
+ #cart-items {
+   position: fixed;
+   top: 2.5em;
+   font-size: 1em;
+   right: 13em;
+   padding: 3px 10px;
+ }
+}
