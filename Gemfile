@@ -5,7 +5,7 @@ ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-gem "pg"
+gem "pg", group: :production
 gem "bcrypt"
 gem "pry"
 gem "flash"
