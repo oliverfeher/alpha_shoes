@@ -1,8 +1,8 @@
 class ShoesController < ApplicationController
     def index
         @shoes = Shoe.all
-        @shoes_asc = Shoe.all.ordered_by_price_asc
-        @shoes_desc = Shoe.all.ordered_by_price_desc
+        @shoes_asc = Shoe.all.list_by_price_asc
+        @shoes_desc = Shoe.all.list_by_price_desc
         if logged_in?
             render "index"
         else

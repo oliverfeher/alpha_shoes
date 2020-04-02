@@ -5,6 +5,6 @@ class Shoe < ApplicationRecord
     has_many :reviews
     accepts_nested_attributes_for :reviews
 
-    scope :ordered_by_price_asc, -> { order(price: :asc) }
-    scope :ordered_by_price_desc, -> { order(price: :desc) }
+    scope :list_by_price_asc, -> { order(price: :asc) }
+    scope :list_by_price_desc, -> { order(price: :desc) }
 end
