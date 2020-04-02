@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
                 redirect_to action: "new"
             end
         
-        elsif
+        elsif auth
             ouser = User.find_or_create_by(id: auth['info']['email']) do |u|
                 u.email = auth['info']['email']
                 u.password = SecureRandom.hex(32)

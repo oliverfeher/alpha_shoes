@@ -213,7 +213,7 @@
   #cart-items {
     position: absolute;
     top: 2em;
-    right: 4.7em;
+   right: 4.7em;
     font-size: 3em;
     font-weight: bold;
     background-color: #E1AF5A;
@@ -448,7 +448,7 @@
     margin-bottom: 5%;
   }
   .nav-link {
-margin-top: 15px;
+    margin-top: 15px;
     padding: 10px;
     display: block;
     margin-left: 30px;
