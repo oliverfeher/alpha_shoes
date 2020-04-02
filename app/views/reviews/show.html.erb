@@ -4,10 +4,12 @@
         <%= content_tag(:p, @shoe.model.upcase, class: "detail-3") %>
         <%= content_tag(:p, "RATING: #{@avg.round(1)}", class: "review-rat") %>
         <%= content_tag(:div,"", class: "line2")%>
-        <% @shoe.reviews.each do |x| %>
-            <%= content_tag(:p, "Review by: #{x.user.detail.full_name}", class: "review-auth")%>
-            <%= content_tag(:p, "#{x.rating} STARS", class: "review-rat")%>
-            <%= content_tag(:p, x.content, class: "review-desc")%>
-            <%= content_tag(:div,"", class: "line")%>
+        <% if !@shoe.reviews.empty? %>
+            <% @shoe.reviews.each do |x| %>
+                <%= content_tag(:p, "Review by: #{x.user.detail.full_name}", class: "review-auth")%>
+                <%= content_tag(:p, "#{x.rating} STARS", class: "review-rat")%>
+                <%= content_tag(:p, x.content, class: "review-desc")%>
+                <%= content_tag(:div,"", class: "line")%>
+            <% end %>
         <% end %>
 <% end %>
