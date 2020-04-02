@@ -36,7 +36,7 @@
     </section>
 
     <section class="shoes-list-container ascend" id="ascend">
-        <% @shoes.order(price: :asc).each do |shoe| %>
+        <% @shoes_asc.each do |shoe| %>
             <div class="shoe-container">
                 <%= image_tag(shoe.pic_url, class: "container-img")%>
                 <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
@@ -57,7 +57,7 @@
     </section>
 
     <section class="shoes-list-container descend" id="descend">
-        <% @shoes.order(price: :desc).each do |shoe| %>
+        <% @shoes_desc.each do |shoe| %>
             <div class="shoe-container">
                 <%= image_tag(shoe.pic_url, class: "container-img")%>
                 <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
@@ -94,7 +94,7 @@
           for(x of a) { x.placeholder = "Select size:", x.value = ""}
       }; 
 
-      function descend() {
+      function ascend() {
         let original = document.getElementById("original")
         let listDescend = document.getElementById("descend");
         let listAscend = document.getElementById("ascend");
@@ -103,7 +103,7 @@
         listDescend.style.display = "block";
       }
 
-      function ascend() {
+      function descend() {
         let original = document.getElementById("original")
         let listAscend = document.getElementById("ascend");
         let listDescend = document.getElementById("descend");
