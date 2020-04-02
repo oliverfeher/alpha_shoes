@@ -352,12 +352,15 @@ body {
     display: none;
 }
 
-#order {
+#order2 {
+    align-self: center;
     display: flex;
+    margin-top: 10%;
     margin-bottom: 0;
     font-size: 3em;
     color: white;
     text-decoration: underline;
+    width: 80%;
 }
 
 #low {

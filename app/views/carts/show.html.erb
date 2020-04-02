@@ -8,7 +8,7 @@
       <%= image_tag("logos/triangles", id: "triangle2")%>
 <% end %>
 
-<%= content_tag(:section, "", id: "shoes-list-container") do %>
+<%= content_tag(:section, "", class: "shoes-list-container") do %>
     <% if !@cart.empty? %>
         <% @cart.each do |shoe| %>
             <%= content_tag(:div, "", class: "cart-item-container") do %>

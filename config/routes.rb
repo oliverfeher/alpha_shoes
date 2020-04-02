@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/users/logout" => "sessions#destroy"
   post "/sessions" => "sessions#create"
   post "/users/details" => "details#create"
+  get '/auth/facebook/callback' => 'sessions#create'
   root 'home#index'
 
 
