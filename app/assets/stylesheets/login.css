@@ -200,7 +200,7 @@ input {
 
 #order {
     width: 80%;
-    margin: 10% auto;
+    margin: 0 auto;
 }
 .total {
     font-size: 4em;
@@ -421,8 +421,9 @@ body {
         grid-row-gap: 15px;
     }
     .shoe-container {
-        height: 700px;
+        height: 600px;
         border: 5px black solid;
+        width: 80%;
     }
     .container-img {
         margin-top: 30px;
@@ -566,7 +567,7 @@ body {
         font-weight: bold;
     }
     #low, #high {
-        font-size: 0.7em;
+        font-size: 0.5em;
         margin-bottom: 0;
     }
     #order2 {
@@ -575,5 +576,43 @@ body {
     }
     #order2:hover {
         cursor: pointer;
+    }
+    #cart {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 15px;
+        grid-row-gap: 5px;
+    }
+    #order {
+        margin-top: 1%;
+    }
+    .click-shop {
+        text-align: center;
+        font-size: 1.5em;
+        width: 20%;
+        margin: auto;
+    }
+    .cart-empty {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        font-size: 2em;
+    }
+    .total {
+        font-size: 2em;
+    }
+    #total-amount {
+        font-size: 2em;
+    }
+    .cart-item-container {
+        width: 35%;
+        margin: auto;
+    }
+    .split1 {
+        margin-left: -20%;
+    }
+    .delete {
+        height: 60px;
+        width: 60px;
+        margin-left: 5%;
     }
 }

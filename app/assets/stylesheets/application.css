@@ -452,7 +452,7 @@
     padding: 10px;
     display: block;
     margin-left: 30px;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
   }
 
@@ -469,6 +469,16 @@
     padding: 0.5%;
     width: 10%;
     align-self: center;
+    border: solid #E1AF5A 5px;
+  }
+  .text {
+    bottom: 135%;
+  }
+  .text2 {
+    bottom: 120%;
+  }
+  .text3 {
+    bottom: 103%;
   }
   #shop-now-container {
     margin-top: 35%;
@@ -484,7 +494,7 @@
   }
 
   footer {
-    height: 3.5em;
+    height: 3em;
     margin: 0;
   }
   #footer li {
@@ -501,7 +511,7 @@
    position: fixed;
    top: 2.5em;
    font-size: 1em;
-   right: 13em;
+   right: 10%;
    padding: 3px 10px;
  }
 }

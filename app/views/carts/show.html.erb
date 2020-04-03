@@ -8,7 +8,7 @@
       <%= image_tag("logos/triangles.svg", id: "triangle2")%>
 <% end %>
 
-<%= content_tag(:section, "", class: "shoes-list-container") do %>
+<%= content_tag(:section, "",id: "cart", class: "shoes-list-container") do %>
     <% if !current_user.cart || @cart.empty? %>
             <%= content_tag(:p, "Your cart is empty!", class: "cart-empty") %>
             <%= link_to("Click here to shop!", shoes_path, class: "click-shop") %>
