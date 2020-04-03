@@ -10,7 +10,7 @@
   </head>
 
 <div class="overlay">
-        <%= image_tag("images/logos/cross-icon", id: "close-menu")%>
+        <%= image_tag("logos/cross-icon.svg", id: "close-menu")%>
         <ul>
             <li id="home"><a href="/">HOME</a></li>
             <li id="about"><a href="/">ORDERS</a></li>
@@ -27,7 +27,7 @@
     <nav>
       <ul id="nav-bar">
         <li>
-            <%= image_tag("images/logos/hamburger", id: "overlay-hamburger")%>
+            <%= image_tag("logos/hamburger.svg", id: "overlay-hamburger")%>
         </li>
         <li>
           <%= link_to "HOME", "/", class: "nav-link" %>
@@ -48,11 +48,11 @@
         <% if logged_in? %>
           <li id="logo-container">
             <div id="cart-container">
-              <%= image_tag("logos/shopping-cart", id: "shoppingcart")%>
+              <%= image_tag("logos/shopping-cart.svg", id: "shoppingcart")%>
               <%= content_tag(:p, cart_items, id: "cart-items") %>
             </div>
             <div>
-              <%= image_tag("logos/user", id: "user-logo")%>
+              <%= image_tag("logos/user.svg", id: "user-logo")%>
               <% if current_user.detail %>
                 <p id="user-name"><%= current_user.detail.full_name %></p>
               <% end %>
