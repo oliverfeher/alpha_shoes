@@ -1,10 +1,10 @@
 <%= content_tag(:section, "", id: "main") do %>
-      <%= image_tag("logos/triangles", id: "triangle1")%>
+      <%= image_tag("logos/triangles.svg", id: "triangle1")%>
       <%= content_tag(:div, "", id: "main-title") do %>
         <%= content_tag(:p, "EDIT", class: "title-21")%>
         <%= content_tag(:p, "ACCOUNT", class: "title-1")%>
       <% end %>
-      <%= image_tag("logos/triangles", id: "triangle2")%>
+      <%= image_tag("logos/triangles.svg", id: "triangle2")%>
 <% end %>
 
     <%= form_with(url: "/users/#{current_user.id}", method: "PATCH") do |f| %>
