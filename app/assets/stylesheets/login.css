@@ -615,4 +615,29 @@ body {
         width: 60px;
         margin-left: 5%;
     }
+    .delete:hover {
+        cursor: pointer;
+    }
+    .review-rat {
+        font-size: 2em;
+    }
+    #review_form {
+        width: 20%;
+        margin-top: 10%;
+    }
+    #review_rating {
+        font-size: 2em;
+        height: 50px;
+    }
+
+    #review_content {
+        font-size: 1.5em;
+        height: 300px;
+    }
+    .review-auth {
+        font-size: 2em;
+    }
+    .review-desc {
+        font-size: 1.5em;
+    }
 }
