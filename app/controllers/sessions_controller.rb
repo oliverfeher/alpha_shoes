@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
             end
         
         elsif auth
-            ouser = User.find_or_create_by(id: auth['info']['email']) do |u|
+            ouser = User.find_or_create_by(email: auth['info']['email']) do |u|
                 u.email = auth['info']['email']
                 u.password = SecureRandom.hex(32)
             end

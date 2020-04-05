@@ -13,7 +13,9 @@
         <%= image_tag("logos/cross-icon.svg", id: "close-menu")%>
         <ul>
             <li id="home"><a href="/">HOME</a></li>
-            <li id="about"><a href="/">ORDERS</a></li>
+            <% if current_user %>
+              <li id="about"><%= link_to "ORDERS", user_orders_path %></li>
+            <% end %>
             <li id="projects"><a href="/shoes">PRODUCTS</a></li>
             <% if logged_in? %>
               <li id="contact"><a href="/users/logout">LOG OUT</a></li>
