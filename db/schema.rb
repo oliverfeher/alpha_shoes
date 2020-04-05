@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2020_04_05_172756) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "carts_shoes_id"
     t.integer "total_amount"
+    t.datetime "created_at"
   end
 
   create_table "reviews", force: :cascade do |t|
