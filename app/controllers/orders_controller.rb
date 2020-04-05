@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
     end
 
     def show
+        binding.pry
     end
-    
+
 end
