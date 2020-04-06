@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(email: params[:user][:email], password: params[:user][:password])
+        @user = User.create(users_params)
         if @user.errors.any?
             # redirect_to new_user_path
              render :new
@@ -26,6 +26,12 @@ class UsersController < ApplicationController
         current_user.update(email: params[:email])
         current_user.detail.update(full_name: params[:full_name], address: params[:address], city: params[:city], state: params[:state])
         redirect_to edit_user_path(current_user)
+    end
+
+    private
+
+    def users_params
+        params.require(:user).permit(:email, :password)
     end
 
 end

@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
    
     def create
+
+        #Create a new order by collecting all items in the current_user's cart, calculating it's total amount and displaying the the timestamp
+        #Upon creating, cart is being dumped
         order = Order.new
         items = []
         current_user.cart.carts_shoes.each {|item| items <<  item}
