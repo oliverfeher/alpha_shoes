@@ -22,13 +22,15 @@
         <%= content_tag(:p, "#{msg}", id: "error-msg") %>
     <% end %>
 
+
+    <%= link_to('facebook login', '/auth/facebook', id: "fb-login") %>
+
     <% if !logged_in? %>
         <%= link_to "REGISTER", new_user_path, id: "cta"%>
     <% end %>
 
 <% end %>
 
- <%= link_to('facebook login', '/auth/facebook', id: "fb-login") %>
 
 
 

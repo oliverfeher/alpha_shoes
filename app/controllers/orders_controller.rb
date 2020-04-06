@@ -13,8 +13,7 @@ class OrdersController < ApplicationController
     end
 
     def show
-        @orders = Order.find_by(user_id: current_user.id)
-        binding.pry
+        @orders = current_user.orders.each {|order| Order.find_by(id: order.id)}
     end
 
 end
