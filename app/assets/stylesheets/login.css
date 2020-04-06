@@ -397,6 +397,12 @@ body {
         width: 50%;
         border: 5px #E1AF5A solid;
     }
+    #button:hover {
+        background-color: #E1AF5A;
+        border: 5px solid white;
+        color: black;
+        cursor: pointer;
+    }
     #fb-login {
         font-size: 1.5em;
         width: 10%;
@@ -405,6 +411,9 @@ body {
     #cta {
         margin-top: 5%;
         font-size: 1.5em;
+    }
+    #cta:hover {
+        text-decoration: underline #E1AF5A;
     }
 
     #error-msg {
@@ -640,5 +649,12 @@ body {
     }
     .review-desc {
         font-size: 1.5em;
+    }
+    #fb-login {
+        margin-top: 5%;
+        width: 100%;
+    }
+    #fb-login:hover {
+        border: 3px white solid;
     }
 }

@@ -471,6 +471,12 @@
     align-self: center;
     border: solid #E1AF5A 5px;
   }
+  #shop-now:hover {
+    background-color: #E1AF5A;
+    border: 5px solid white;
+    color: black;
+    cursor: pointer;
+}
   .text {
     bottom: 135%;
   }

@@ -10,7 +10,7 @@
   </head>
 
 <div class="overlay">
-        <%= image_tag("logos/cross-icon.svg", id: "close-menu")%>
+        <%= image_tag("logos/cross-icon.svg", id: "close-menu", onclick: "hideMenu()")%>
         <ul>
             <li id="home"><a href="/">HOME</a></li>
             <% if current_user %>
@@ -104,8 +104,7 @@
               setTimeout(function() {overlay.classList.remove("show-menu-hiding"); }, 1200);
           }
           removeClass();
-          
-
+          console.log("test")
       }
       let listHome = document.getElementById("home");
       let listAbout = document.getElementById("about");
