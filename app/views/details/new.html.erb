@@ -7,7 +7,7 @@
       <%= image_tag("logos/triangles.svg", id: "triangle2")%>
 <% end %>
 
-<%= form_with(url: "/users/details", method: "POST") do |f| %>
+<%= form_with(model: @detail, url: "/users/details", method: "POST") do |f| %>
 
     <%= f.label :full_name, "Full name" %>
     <%= f.text_field :full_name, placeholder: "Enter your full name" %>
@@ -21,9 +21,12 @@
     <%= f.label :state, "State" %>
     <%= f.text_field :state, placeholder: "Enter your state" %>
 
+    <%= f.hidden_field  "user_id", value: current_user.id %>
+
     <%= f.submit "CONFIRM", id: "button"%>
 
     <% flash.each do |name, msg| %>
         <%= content_tag(:p, "#{msg}", id: "error-msg") %>
     <% end %>
+
 <% end %>
