@@ -6,3 +6,14 @@
       <% end %>
       <%= image_tag("logos/triangles.svg", id: "triangle2")%>
 <% end %>
+
+<%= content_tag(:section, "",id: "cart", class: "shoes-list-container") do %>
+        <% @orders.order(created_at: :desc).each do |order| %>
+            <%= content_tag(:div, "", class: "order-container") do %>
+                <%= content_tag(:p, "Total amount", class: "brand-tag") %>
+                <%= content_tag(:p, "$#{order.total_amount}", class: "price-tag") %>
+                <%= content_tag(:p, "Date", class: "brand-tag") %>
+                <%= content_tag(:p, order.created_at, class: "model-tag") %>
+            <% end %>
+        <% end %>
+<% end %>
