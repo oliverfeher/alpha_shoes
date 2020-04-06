@@ -10,10 +10,12 @@ class OrdersController < ApplicationController
         order.user_id = current_user.id
         order.total_amount = total
         order.save
+        current_user.cart.carts_shoes.destroy_all
+        redirect_to user_orders_path
     end
 
     def show
-        @orders = current_user.orders.each {|order| Order.find_by(id: order.id)}
+        @orders = current_user.orders
     end
 
 end

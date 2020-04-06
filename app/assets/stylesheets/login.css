@@ -380,6 +380,21 @@ body {
     margin-top: 5%;
     margin-bottom: 5%;
 }
+#checkout {
+    font-size: 3em;
+    padding: 3%;
+    background-color: white;
+    border: solid #E1AF5A 10px;
+    border-radius: 55px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#checkout-container {
+    margin-bottom: 5%;
+    text-align: center;
+}
 
 @media only screen and (min-width: 1200px) {
     form {
