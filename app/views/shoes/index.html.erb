@@ -83,16 +83,25 @@
         const url = "/users/<%= current_user.id %>/cart"
           fetch(url, {
               method : "POST",
+              headers: {
+                'Content-Type': 'application/json',
+              },
               body : JSON.stringify({
                   shoeSize : event.target.size.value,
                   shoeId : event.target.id.value
               })
-          });
+          }).then(res => res.json()).then(data => {
+            if (data.id){
+              cartItems.innerText = parseInt(cartItems.innerText) + 1;
+            } else {
+              alert(data.errors.join(', '))
+            }
+          })
           let cartItems = document.getElementById("cart-items");
            if (cartItems.innerText === "") {
              cartItems.innerText = 0;           
              };
-          cartItems.innerText = parseInt(cartItems.innerText) + 1;
+          
           let a = Array.from(document.getElementsByClassName("shoe-size"))
           for(x of a) { x.placeholder = "Select size:", x.value = ""}
       }; 

@@ -11,28 +11,24 @@ class CartsController < ApplicationController
     end 
 
     def create
-        data_sent = ActiveSupport::JSON.decode(request.body.read)
+        shoe = Shoe.find(params[:shoeId])
+        size = Size.find_by(shoe_size: params[:shoeSize])
         if current_user.cart
             # shoe = Shoe.find_by(id: data_sent.values.second)
             # @cart = current_user.cart
             # @cart.shoes << shoe
-
-            shoe = Shoe.find_by(id: data_sent.values.second)
             cart = current_user.cart
-            size = Size.find_by(shoe_size: data_sent.values.first)
-
-            sql = "INSERT INTO carts_shoes (cart_id, shoe_id, size_id) VALUES (#{cart.id}, #{shoe.id}, #{size.id})"
-            ActiveRecord::Base.connection.execute(sql)
         else
             cart = Cart.create(user_id: current_user.id)
-            # binding.pry
-            shoe = Shoe.find_by(id: data_sent.values.second)
-            size = Size.find_by(shoe_size: data_sent.values.first)
-
-            sql = "INSERT INTO carts_shoes (cart_id, shoe_id, size_id) VALUES (#{cart.id}, #{shoe.id}, #{size.id})"
-            ActiveRecord::Base.connection.execute(sql)
-            # binding.pry
         end
+
+        item = cart.carts_shoes.build(size: size, shoe: shoe)
+        if item.save
+            render json: item
+        else
+            render json: {errors: item.errors.full_messages}
+        end
+
         # for an order shoe size will equal to  data_sent.values.first
         # Cart.shoes.to_a , then array.shift() to remove element, cart.shoes = array
     end

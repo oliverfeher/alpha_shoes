@@ -17,7 +17,7 @@
 
           <!-- Full-width images with number and caption text -->
           <div class="mySlides fade">
-            <%= image_tag("logos/shoe_main.svg", style: "width: 90%;")%>
+            <%= image_tag(@shoe1.pic_url, style: "width: 90%;")%>
             <div class="text"><%= @shoe1.brand%></div>
             <div class="text2"><%= @shoe1.model.upcase%></div>
             <div class="text3">$<%= @shoe1.price%></div>
