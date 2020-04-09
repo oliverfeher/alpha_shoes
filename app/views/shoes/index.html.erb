@@ -1,13 +1,6 @@
 
 
- <section id="main">
-      <%= image_tag("logos/triangles.svg", id: "triangle1")%>
-      <div id="main-title">
-        <p class="title-21">ALPHA</p>
-        <p class="title-1">PRODUCTS</p>
-      </div>
-      <%= image_tag("logos/triangles.svg", id: "triangle2")%>
-    </section>
+ <%= render partial: "home/logo", locals: {title1: "ALPHA", title2: "PRODUCTS"}%>
 
     <div id="order2">
       <p id="low" onclick = "descend()">Price low</p>

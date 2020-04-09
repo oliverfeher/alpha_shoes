@@ -1,12 +1,4 @@
-
-<%= content_tag(:section, "", id: "main") do %>
-      <%= image_tag("logos/triangles.svg", id: "triangle1")%>
-      <%= content_tag(:div, "", id: "main-title") do %>
-        <%= content_tag(:p, "YOUR", class: "title-21")%>
-        <%= content_tag(:p, "CART", class: "title-1")%>
-      <% end %>
-      <%= image_tag("logos/triangles.svg", id: "triangle2")%>
-<% end %>
+<%= render partial: "home/logo", locals: {title1: "YOUR", title2: "CART"}%>
 
 <%= content_tag(:section, "",id: "cart", class: "shoes-list-container") do %>
     <% if !current_user.cart || @cart.empty? %>

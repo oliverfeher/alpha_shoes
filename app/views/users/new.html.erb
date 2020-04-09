@@ -1,13 +1,6 @@
 <%= stylesheet_link_tag 'application' %>
 
-<%= content_tag(:section, "", id: "main") do %>
-      <%= image_tag("logos/triangles.svg", id: "triangle1")%>
-      <%= content_tag(:div, "", id: "main-title") do %>
-        <%= content_tag(:p, "ALPHA", class: "title-21")%>
-        <%= content_tag(:p, "SHOES", class: "title-1")%>
-      <% end %>
-      <%= image_tag("logos/triangles.svg", id: "triangle2")%>
-<% end %>
+<%= render partial: "home/logo", locals: {title1: "ALPHA", title2: "SHOES"}%>
 
 <%= form_with(model: @user) do |f| %>
     <%= f.label :email, "User E-mail" %><br>
