@@ -4,5 +4,5 @@
             <%= image_tag(shoe.pic_url, style: "width: 90%;")%>
             <%= content_tag(:div, shoe.brand, class: "text") %>
             <%= content_tag(:div, shoe.model.upcase, class: "text2") %>
-            <%= content_tag(:div, shoe.price, class: "text3") %>
+            <%= content_tag(:div, "$#{shoe.price}, class: "text3") %>
 <% end %>
