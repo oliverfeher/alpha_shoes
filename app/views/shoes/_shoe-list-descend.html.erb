@@ -1,0 +1,20 @@
+<section class="shoes-list-container descend" id="descend">
+        <% @shoes_desc.each do |shoe| %>
+            <div class="shoe-container">
+                <%= image_tag(shoe.pic_url, class: "container-img")%>
+                <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
+                <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
+                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
+                
+
+              <form class="add" onsubmit="addToCart()">
+                  <%= number_field_tag 'size', nil, within: 6...13, placeholder: "Select size:", class: "shoe-size", required: true %>
+                  <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
+                  <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+                  <%= submit_tag "Add to cart", class: "add-cart"%>
+              </form>
+
+                <%= link_to "Details", shoe_path(shoe), class: "shoe-details"  %>
+            </div>
+        <% end %>
+    </section>

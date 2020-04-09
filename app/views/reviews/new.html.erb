@@ -1,7 +1,5 @@
 <%= render partial: "home/logo", locals: {title1: "LEAVE", title2: "REVIEW"}%>
 
-
-
 <%= form_with(model: @review, url: "/shoes/#{@shoe.id}/reviews", method: "POST", id: "review_form") do |f| %>
   <%= f.label :rating, "Rating"%>
   <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>

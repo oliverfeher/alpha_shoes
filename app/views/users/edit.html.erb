@@ -2,25 +2,25 @@
 
     <%= form_with(url: "/users/#{current_user.id}", method: "PATCH") do |f| %>
 
-    <%= f.label :full_name, "Full name" %>
-    <%= f.text_field :full_name, placeholder: "Enter your full name", value: current_user.detail.full_name %>
+      <%= f.label :full_name, "Full name" %>
+      <%= f.text_field :full_name, placeholder: "Enter your full name", value: current_user.detail.full_name %>
 
-    <%= f.label :email, "E-mail" %>
-    <%= f.email_field :email, placeholder: "Enter your email", value: current_user.email %>
-    
-    <%= f.label :address, "Address" %>
-    <%= f.text_field :address, placeholder: "Enter your address", value: current_user.detail.address %>
+      <%= f.label :email, "E-mail" %>
+      <%= f.email_field :email, placeholder: "Enter your email", value: current_user.email %>
+      
+      <%= f.label :address, "Address" %>
+      <%= f.text_field :address, placeholder: "Enter your address", value: current_user.detail.address %>
 
-    <%= f.label :city, "City" %>
-    <%= f.text_field :city, placeholder: "Enter your city", value: current_user.detail.city %>
+      <%= f.label :city, "City" %>
+      <%= f.text_field :city, placeholder: "Enter your city", value: current_user.detail.city %>
 
-    <%= f.label :state, "State" %>
-    <%= f.text_field :state, placeholder: "Enter your state", value: current_user.detail.state %>
+      <%= f.label :state, "State" %>
+      <%= f.text_field :state, placeholder: "Enter your state", value: current_user.detail.state %>
 
 
-    <%= f.submit "UPDATE", id: "button"%>
+      <%= f.submit "UPDATE", id: "button"%>
 
-    <% flash.each do |name, msg| %>
-        <%= content_tag(:p, "#{msg}", id: "error-msg") %>
-    <% end %>
+      <% flash.each do |name, msg| %>
+          <%= content_tag(:p, "#{msg}", id: "error-msg") %>
+      <% end %>
 <% end %>

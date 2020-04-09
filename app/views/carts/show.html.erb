@@ -1,36 +1,13 @@
+<!-- MAIN LOGO !-->
 <%= render partial: "home/logo", locals: {title1: "YOUR", title2: "CART"}%>
 
-<%= content_tag(:section, "",id: "cart", class: "shoes-list-container") do %>
-    <% if !current_user.cart || @cart.empty? %>
-            <%= content_tag(:p, "Your cart is empty!", class: "cart-empty") %>
-            <%= link_to("Click here to shop!", shoes_path, class: "click-shop") %>
-    <% else %>
-        <% @cart.each do |shoe| %>
-            <%= content_tag(:div, "", class: "cart-item-container") do %>
-                <%= image_tag(Shoe.find_by(id: shoe.shoe_id).pic_url, class: "split1")%>
-                <%= content_tag(:div, "", class: "split2") do %>
-                    <%= content_tag(:p, Shoe.find_by(id: shoe.shoe_id).brand, class: "brand-tag") %>
-                    <%= content_tag(:p, Shoe.find_by(id: shoe.shoe_id).model.upcase, class: "model-tag") %>
-                    <%= content_tag(:p, "Size: #{Size.find_by(id: shoe.size_id).shoe_size}", class: "model-tag")%>
-                    <%= content_tag(:p, "$#{Shoe.find_by(id: shoe.shoe_id).price}", class: "price-tag") %>
-                <% end %>
-                <form class="delete-form" onsubmit="deleteShoe()">
-                    <%= hidden_field_tag  "id", Shoe.find_by(id: shoe.shoe_id).id, class: "Shoe.find_by(id: shoe.shoe_id)-id" %>
-                    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
-                    <button type="submit" class="button-pic">
-                        <%= image_tag("logos/delete.svg", class: "delete")%>
-                    </button>
-                </form>
-            <% end %>
-        <% end %>
-    <% end %>
-<% end %>
+<!-- CART CONTAINER !-->
+<%= render partial: "carts/cart" %>
 
-<form id="checkout-container", method="POST", action="/users/<%=current_user.id%>/orders">
-    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
-    <%= submit_tag "Check Out", id: "checkout"%>
-</form>
+<!-- CHECKOUT BUTTON AND LOGIC !-->
+<%= render partial: "carts/checkout" %>
 
+<!-- TOTAL AMOUNT !-->
 <%= content_tag(:section,"", id: "order") do %>
     <%= content_tag(:p, "TOTAL", class: "total") %>
     <%= content_tag(:p, "$#{@total}", id: "total-amount") %>

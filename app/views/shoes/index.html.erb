@@ -2,73 +2,18 @@
 
  <%= render partial: "home/logo", locals: {title1: "ALPHA", title2: "PRODUCTS"}%>
 
-    <div id="order2">
-      <p id="low" onclick = "descend()">Price low</p>
-      <p id="high" onclick = "ascend()">Price high</p>
-    </div>
+<!-- SCOPE METHODS ORDER BY PRICE LOW AND HIGH !-->
+  <%= content_tag(:div, "", id: "order2") do %>
+    <%= content_tag(:p, "Price low", onclick: "descend()", id: "low") %>
+    <%= content_tag(:p, "Price high", onclick: "ascend()", id: "high") %>
+  <% end %>
 
-    <section class="shoes-list-container" id="original">
-        <% @shoes.each do |shoe| %>
-            <div class="shoe-container">
-                <%= image_tag(shoe.pic_url, class: "container-img")%>
-                <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
-                <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
-                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
-                
 
-              <form class="add" onsubmit="addToCart()">
-                  <%= number_field_tag 'size', nil, within: 6...13, placeholder: "Select size:", class: "shoe-size", required: true %>
-                  <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
-                  <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
-                  <%= submit_tag "Add to cart", class: "add-cart"%>
-              </form>
+<!-- ALL OF THE SHOES IN ASCENDING DESCENDING AND ORIGINAL ORDER !-->
+    <%= render partial: "shoes/shoe-list-original" %>
+    <%= render partial: "shoes/shoe-list-ascend" %>
+    <%= render partial: "shoes/shoe-list-descend" %>
 
-                <%= link_to "Details", shoe_path(shoe), class: "shoe-details"  %>
-            </div>
-        <% end %>
-    </section>
-
-    <section class="shoes-list-container ascend" id="ascend">
-        <% @shoes_asc.each do |shoe| %>
-            <div class="shoe-container">
-                <%= image_tag(shoe.pic_url, class: "container-img")%>
-                <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
-                <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
-                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
-                
-
-              <form class="add" onsubmit="addToCart()">
-                  <%= number_field_tag 'size', nil, within: 6...13, placeholder: "Select size:", class: "shoe-size", required: true %>
-                  <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
-                  <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
-                  <%= submit_tag "Add to cart", class: "add-cart"%>
-              </form>
-
-                <%= link_to "Details", shoe_path(shoe), class: "shoe-details"  %>
-            </div>
-        <% end %>
-    </section>
-
-    <section class="shoes-list-container descend" id="descend">
-        <% @shoes_desc.each do |shoe| %>
-            <div class="shoe-container">
-                <%= image_tag(shoe.pic_url, class: "container-img")%>
-                <%= content_tag(:p, shoe.brand, class: "brand-tag") %>
-                <%= content_tag(:p, shoe.model.upcase, class: "model-tag") %>
-                <%= content_tag(:p, "$#{shoe.price}", class: "price-tag") %>
-                
-
-              <form class="add" onsubmit="addToCart()">
-                  <%= number_field_tag 'size', nil, within: 6...13, placeholder: "Select size:", class: "shoe-size", required: true %>
-                  <%= hidden_field_tag  "id", shoe.id, class: "shoe-id" %>
-                  <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
-                  <%= submit_tag "Add to cart", class: "add-cart"%>
-              </form>
-
-                <%= link_to "Details", shoe_path(shoe), class: "shoe-details"  %>
-            </div>
-        <% end %>
-    </section>
 
     <script>
       function addToCart() {
