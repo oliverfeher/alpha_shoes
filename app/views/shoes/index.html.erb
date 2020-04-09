@@ -1,18 +1,15 @@
 
-
- <%= render partial: "home/logo", locals: {title1: "ALPHA", title2: "PRODUCTS"}%>
+<!-- MAIN LOGO !-->
+<%= render partial: "home/logo", locals: {title1: "ALPHA", title2: "PRODUCTS"}%>
 
 <!-- SCOPE METHODS ORDER BY PRICE LOW AND HIGH !-->
-  <%= content_tag(:div, "", id: "order2") do %>
-    <%= content_tag(:p, "Price low", onclick: "descend()", id: "low") %>
-    <%= content_tag(:p, "Price high", onclick: "ascend()", id: "high") %>
-  <% end %>
+<%= render partial: "shoes/listing-order"%>
 
 
 <!-- ALL OF THE SHOES IN ASCENDING DESCENDING AND ORIGINAL ORDER !-->
-    <%= render partial: "shoes/shoe-list-original" %>
-    <%= render partial: "shoes/shoe-list-ascend" %>
-    <%= render partial: "shoes/shoe-list-descend" %>
+<%= render partial: "shoes/shoe-list-original" %>
+<%= render partial: "shoes/shoe-list-ascend" %>
+<%= render partial: "shoes/shoe-list-descend" %>
 
 
     <script>

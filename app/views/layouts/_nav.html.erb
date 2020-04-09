@@ -2,6 +2,7 @@
 <%= content_tag(:nav) do %>
     <%= content_tag(:ul, id: "nav-bar") do %>
 
+<!-- HAMBUGER OVERLAY FOR MOBILE SCREEN !-->
         <%= content_tag(:li) do %>
             <%= image_tag("logos/hamburger.svg", id: "overlay-hamburger")%>
         <% end %>
@@ -14,12 +15,14 @@
           <%= link_to "PRODUCTS", "/shoes", class: "nav-link" %>
         <% end %>
 
+<!-- ORDERS NAV LINK IF USER SESSION TRUE !-->
         <% if current_user %>
           <%= content_tag(:li) do %>
             <%= link_to "ORDERS", "/users/#{current_user.id}/orders", class: "nav-link" %>
           <% end %>
         <% end %>
 
+<!-- IF USER IS LOGGED IN/OUT CHANGES !-->
         <%= content_tag(:li) do %>
           <% if current_user%>
             <%= link_to "LOGOUT", "/users/logout", class: "nav-link" %>
@@ -45,7 +48,8 @@
           <% end %>
           
         <% else %>
-
+        
+<!-- DEFAULT LOGO !-->
         <%= content_tag(:li, id: "logo-container") do %>
             <%= content_tag(:div, "") do %>
                 <%= content_tag(:p, "ALPHA", id: "logo-title")%>

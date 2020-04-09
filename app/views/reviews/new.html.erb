@@ -1,3 +1,4 @@
+<!-- MAIN LOGO !-->
 <%= render partial: "home/logo", locals: {title1: "LEAVE", title2: "REVIEW"}%>
 
 <%= form_with(model: @review, url: "/shoes/#{@shoe.id}/reviews", method: "POST", id: "review_form") do |f| %>
