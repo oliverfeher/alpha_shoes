@@ -138,6 +138,7 @@
   #shop-now-container {
       margin-top: 15%;
       text-align: center;
+      z-index: 5;
   }
 
   #shoes-container {
@@ -331,6 +332,11 @@
     opacity: 0;
     animation: show-x 1s 1s forwards;
 }
+
+#alp_logo {
+  display: none;
+}
+
 .show-menu {
     display: flex;
     flex-direction: column;
@@ -372,6 +378,12 @@
 .overlay li:nth-of-type(4) {
     animation: menu-item-anim 0.5s 1.3s ease-in-out forwards;
 }
+#lights1 {
+  display: none;
+}
+#lights2 {
+  display: none;
+}
 
 @keyframes slide-menu {
     from {
@@ -409,6 +421,7 @@
         transform: scaleX(0);
         opacity: 0;
     }
+    
 }
 
 @media only screen and (min-width: 1200px) {
@@ -520,4 +533,23 @@
    right: 10%;
    padding: 3px 10px;
  }
+ #lights1 {
+   display: block;
+   position: absolute;
+   top: 10%;
+   left: 15%;
+ }
+ #lights2 {
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  transform: rotateY(180deg);
+}
+#alp_logo {
+  display: block;
+  height: 60%;
+  position: relative;
+  top: 20%;
+  width: 10%;
 }

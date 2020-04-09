@@ -15,10 +15,12 @@ class ApplicationController < ActionController::Base
         !!current_user
     end
     
+    #set current user by session if there is session[:user_id]
     def current_user
             @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end
 
+    #helper for display default 0 items or however many is in the user's cart
     def cart_items
         if current_user.cart
             if current_user.cart.shoes.length > 0

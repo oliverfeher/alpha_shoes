@@ -390,6 +390,7 @@ body {
     font-weight: bold;
 }
 
+
 #checkout-container {
     margin-bottom: 5%;
     text-align: center;
@@ -646,6 +647,8 @@ body {
         padding: 5%;
         border: 5px black solid;
         margin: auto 3% 5%;
+        width: 50%;
+        justify-self: center;
     }
     .split1 {
         margin-left: -20%;
@@ -686,5 +689,15 @@ body {
     }
     #fb-login:hover {
         border: 3px white solid;
+    }
+    #checkout:hover {
+        cursor: pointer;
+        background-color: #E1AF5A;
+        border: 5px white solid;
+    }
+    #checkout {
+        border: 5px solid #E1AF5A;
+        font-size: 1.5em;
+        padding: 1.5%;
     }
 }

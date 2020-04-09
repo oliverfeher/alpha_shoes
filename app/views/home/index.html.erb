@@ -7,12 +7,15 @@
 <% end %>
 
   
+
+<%= image_tag("logos/lights.svg", id: "lights1")%>
+<%= image_tag("logos/lights.svg", id: "lights2")%>
  <!-- Slideshow container -->
 
 <%= content_tag(:section, id: "shoes-container") do%>
   <%= content_tag(:div, "", class: "slideshow-container") do %>
 
-          <!-- Full-width images with number and caption text -->
+    <!-- Full-width images with number and caption text -->
     <% @shoes.each do |s| %>
       <%= render partial: "slider", locals: {shoe: s } %>
     <% end %> 

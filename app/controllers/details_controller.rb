@@ -1,4 +1,5 @@
 class DetailsController < ApplicationController
+    
     def new
         @detail = Detail.new
     end
@@ -17,4 +18,5 @@ class DetailsController < ApplicationController
     def details_params
         params.require(:detail).permit(:city, :address, :state, :full_name, :user_id)
     end
+
 end
