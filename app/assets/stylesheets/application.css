@@ -494,7 +494,8 @@
     bottom: 135%;
   }
   .text2 {
-    bottom: 120%;
+    bottom: 125%;
+    font-size: 2em;
   }
   .text3 {
     bottom: 103%;
