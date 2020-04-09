@@ -75,13 +75,11 @@
   </header>
 
   <body>
+
     <%= yield %>
-    <footer>
-      <ul id="footer">
-        <li id="footer-left">ALL RIGHTS RESERVED</li>
-        <li id="footer-right">ALPHA SHOES 2020</li>
-      </ul>
-    </footer>
+
+    <%= render partial: "layouts/footer" %>
+    
   </body>
 
   <script>
