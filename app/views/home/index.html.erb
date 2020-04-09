@@ -1,15 +1,15 @@
- <section id="main">
+<%= content_tag(:section, "", id: "main") do %>
       <%= image_tag("logos/triangles.svg", id: "triangle1")%>
-      <div id="main-title">
-        <p class="title-1">LEAVE THE WORLD</p>
-        <p class="title-1">BEHIND</p>
-      </div>
+      <%= content_tag(:div, "", id: "main-title") do %>
+        <%= content_tag(:p, "LEAVE THE WORLD", class: "title-1")%>
+        <%= content_tag(:p, "BEHIND", class: "title-1")%>
+      <% end %>
       <%= image_tag("logos/triangles.svg", id: "triangle2")%>
-    </section>
+<% end %>
     
-    <section id="shop-now-container">
+    <%= content_tag(:section, id: "shop-now-container") do %>
       <%= link_to "Shop Now", shoes_path, id: "shop-now"%>
-    </section>
+    <% end %>
 
     <section id="shoes-container">
               <!-- Slideshow container -->
