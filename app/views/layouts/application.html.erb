@@ -9,69 +9,10 @@
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap"%>
   </head>
 
-<div class="overlay">
-        <%= image_tag("logos/cross-icon.svg", id: "close-menu", onclick: "hideMenu()")%>
-        <ul>
-            <li id="home"><a href="/">HOME</a></li>
-            <% if current_user %>
-              <li id="about"><a href="/users/<%=current_user.id%>/orders">ORDERS</a></li>
-            <% end %>
-            <li id="projects"><a href="/shoes">PRODUCTS</a></li>
-            <% if logged_in? %>
-              <li id="contact"><a href="/users/logout">LOG OUT</a></li>
-            <% else %>
-              <li id="contact"><a href="/users/login">LOG IN</a></li>
-            <% end %>
-        </ul>
-  </div>
+  <%= render partial: "layouts/hamburger" %>
 
   <header>
-    <nav>
-      <ul id="nav-bar">
-        <li>
-            <%= image_tag("logos/hamburger.svg", id: "overlay-hamburger")%>
-        </li>
-        <li>
-          <%= link_to "HOME", "/", class: "nav-link" %>
-        </li>
-        <li>
-          <%= link_to "PRODUCTS", "/shoes", class: "nav-link" %>
-        </li>
-        <% if current_user %>
-          <li>
-            <%= link_to "ORDERS", "/users/#{current_user.id}/orders", class: "nav-link" %>
-          </li>
-        <% end %>
-        <li>
-          <% if current_user%>
-            <%= link_to "LOGOUT", "/users/logout", class: "nav-link" %>
-          <% else %>
-            <%= link_to "LOGIN", "/users/login", class: "nav-link" %>
-          <% end %>
-        </li>
-        <% if logged_in? %>
-          <li id="logo-container">
-            <div id="cart-container">
-              <%= image_tag("logos/shopping-cart.svg", id: "shoppingcart")%>
-              <%= content_tag(:p, cart_items, id: "cart-items") %>
-            </div>
-            <div>
-              <%= image_tag("logos/user.svg", id: "user-logo")%>
-              <% if current_user.detail %>
-                <p id="user-name"><%= current_user.detail.full_name %></p>
-              <% end %>
-            </div>
-          </li>
-        <% else %>
-        <li id="logo-container">
-          <div>
-            <p id="logo-title">ALPHA</p>
-            <p id="logo-desc">SHOES</p>
-          </div>
-        </li>
-        <% end %>
-      </ul>
-    </nav>
+    <%= render partial: "layouts/nav" %>
   </header>
 
   <body>
@@ -79,7 +20,7 @@
     <%= yield %>
 
     <%= render partial: "layouts/footer" %>
-    
+
   </body>
 
   <script>

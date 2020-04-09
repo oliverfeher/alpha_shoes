@@ -1,0 +1,15 @@
+<div class="overlay">
+        <%= image_tag("logos/cross-icon.svg", id: "close-menu", onclick: "hideMenu()")%>
+        <ul>
+            <li id="home"><a href="/">HOME</a></li>
+            <% if current_user %>
+              <li id="about"><a href="/users/<%=current_user.id%>/orders">ORDERS</a></li>
+            <% end %>
+            <li id="projects"><a href="/shoes">PRODUCTS</a></li>
+            <% if logged_in? %>
+              <li id="contact"><a href="/users/logout">LOG OUT</a></li>
+            <% else %>
+              <li id="contact"><a href="/users/login">LOG IN</a></li>
+            <% end %>
+        </ul>
+  </div>
